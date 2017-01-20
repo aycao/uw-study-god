@@ -2,9 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 const SideNav = (props) => {
+  if (props.courses.length <= 0){
+    return <div>loading data</div>
+  }
   return(
     <div className="col-md-4">
-      This is the sidenav
+      I have so many courses: {props.courses.length}
     </div>
   );
 };
