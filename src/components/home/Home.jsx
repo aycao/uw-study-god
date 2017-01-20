@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 
-import logo from '../../assets/logo.svg';
 import Header from '../header/Header';
+import SideNav from '../side-nav/SideNav';
+import DetailPanel from '../detail-panel/DetailPanel';
 
 class Home extends Component{
   render(){
@@ -9,7 +10,8 @@ class Home extends Component{
         <div className="container-fluid">
           <Header/>
           <div className="container">
-
+            <SideNav/>
+            <DetailPanel/>
           </div>
         </div>
     );

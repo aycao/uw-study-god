@@ -1,6 +1,6 @@
 import Constants from '../utils/Constants';
 
-const INITIAL_STATE = {all: []};
+const INITIAL_STATE = {all: [], activeCourse: null};
 
 const reduceCourses = (state_courses = INITIAL_STATE, action) => {
   switch(action.type){
