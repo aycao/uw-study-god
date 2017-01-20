@@ -1,21 +1,15 @@
 import React from 'react';
-import {connect} from 'react-redux';
+
+import CourseCodeSearchBar from './CourseCodeSearchBar';
+import CourseCodeList from './CourseCodeList';
 
 const SideNav = (props) => {
-  if (props.courses.length <= 0){
-    return <div>loading data</div>
-  }
   return(
-    <div className="col-md-4">
-      I have so many courses: {props.courses.length}
+    <div className="side-nav-container col-md-4">
+      <CourseCodeSearchBar/>
+      <CourseCodeList/>
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  return{
-    courses: state.courses.all,
-  }
-};
-
-export default connect(mapStateToProps)(SideNav);
+export default SideNav;

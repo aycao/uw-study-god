@@ -2,7 +2,7 @@ import Constants from '../utils/Constants';
 
 const INITIAL_STATE = {all: [], activeCourse: null};
 
-const reduceCourses = (state_courses = INITIAL_STATE, action) => {
+const CourseReducer = (state_courses = INITIAL_STATE, action) => {
   switch(action.type){
     case Constants.FETCH_ALL_COURSES:
       return {...state_courses, all: action.payload.data.data};
@@ -11,4 +11,4 @@ const reduceCourses = (state_courses = INITIAL_STATE, action) => {
   }
 };
 
-export default reduceCourses;
+export default CourseReducer;
