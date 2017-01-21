@@ -15,9 +15,9 @@ class Home extends Component{
 
   render(){
     return (
-        <div className="app container-fluid">
+        <div className="app">
           <Header/>
-          <div className="content container">
+          <div className="content container-fluid">
             <SideNav/>
             <DetailPanel/>
           </div>

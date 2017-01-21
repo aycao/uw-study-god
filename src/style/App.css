@@ -1,4 +1,3 @@
-@import "css/bootstrap.css";
 
 .App {
   text-align: center;
@@ -24,7 +23,7 @@ html, body {
   height: 100vh;
 }
 
-.app.container-fluid {
+.app {
   margin: 0 auto;
   height: 100vh;
 }
@@ -33,7 +32,7 @@ html, body {
   height: 15%;
 }
 
-.content.container {
+.content {
   height: 80%;
 }
 
@@ -42,11 +41,11 @@ html, body {
 }
 
 .course-code-search-bar-container {
-  height: 20%;
+  height: 10%;
 }
 
 .course-code-list-container {
-  height: 75%;
+  height: 85%;
   overflow: auto;
 }
 
