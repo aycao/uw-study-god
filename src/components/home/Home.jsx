@@ -1,18 +1,26 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
-import logo from '../../assets/logo.svg';
+import Header from '../header/Header';
+import SideNav from '../side-nav/SideNav';
+import DetailPanel from '../detail-panel/DetailPanel';
+import {fetchAllCoursesAC, fetchAllCourseCodesAC} from '../../actions';
 
 class Home extends Component{
+  constructor(props){
+    super(props);
+    props.fetchAllCourses();
+    props.fetchAllCourseCodes();
+  }
+
   render(){
     return (
-        <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
+        <div className="app container-fluid">
+          <Header/>
+          <div className="content container">
+            <SideNav/>
+            <DetailPanel/>
           </div>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
         </div>
     );
   }
@@ -20,4 +28,15 @@ class Home extends Component{
 
 }
 
-export default Home;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchAllCourses: () => {
+      dispatch(fetchAllCoursesAC())
+    },
+    fetchAllCourseCodes: () => {
+      dispatch(fetchAllCourseCodesAC())
+    }
+  }
+};
+
+export default connect(null, mapDispatchToProps)(Home);

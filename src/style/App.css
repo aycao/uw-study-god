@@ -1,3 +1,5 @@
+@import "css/bootstrap.css";
+
 .App {
   text-align: center;
 }
@@ -17,6 +19,38 @@
 .App-intro {
   font-size: large;
 }
+
+html, body {
+  height: 100vh;
+}
+
+.app.container-fluid {
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.page-header {
+  height: 15%;
+}
+
+.content.container {
+  height: 80%;
+}
+
+.side-nav-container {
+  height: 100%;
+}
+
+.course-code-search-bar-container {
+  height: 20%;
+}
+
+.course-code-list-container {
+  height: 75%;
+  overflow: auto;
+}
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
