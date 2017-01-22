@@ -7,11 +7,14 @@ const Constants = {
   API_BASE_URL: 'https://api.uwaterloo.ca/v2',
   API_COURSE_BASE_ROUTE: '/courses',
   API_COURSE_CODE_BASE_ROUTE: '/codes/subjects',
+  API_TERM_LIST_BASE_ROUTE: '/terms/list',
 
   // ACTION TYPES
 
   FETCH_ALL_COURSES: 'FETCH_ALL_COURSES',
   FETCH_ALL_COURSE_CODES: 'FETCH_ALL_COURSE_CODES',
+  FETCH_ALL_TERMS: 'FETCH_ALL_TERMS',
+  SET_ACTIVE_TERM: 'SET_ACTIVE_TERM',
 };
 
 export default Constants;

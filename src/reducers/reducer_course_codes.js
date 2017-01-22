@@ -1,6 +1,6 @@
 import Constants from '../utils/Constants';
 
-const INITIAL_STATE = {all: []};
+const INITIAL_STATE = {all: [], activeCourseCode: 'ECE'};
 
 const CourseCodeReducer = (state_courseCodes = INITIAL_STATE, action) => {
   switch (action.type){

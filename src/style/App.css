@@ -30,6 +30,11 @@ html, body {
 
 .page-header {
   height: 15%;
+  margin: 0;
+}
+
+.page-header h2 {
+  margin: 0;
 }
 
 .content {
@@ -38,6 +43,7 @@ html, body {
 
 .side-nav-container {
   height: 100%;
+  overflow: scroll;
 }
 
 .course-code-search-bar-container {
@@ -45,8 +51,12 @@ html, body {
 }
 
 .course-code-list-container {
-  height: 85%;
-  overflow: auto;
+  height: 80%;
+  overflow: scroll;
+}
+
+.course-code-list-item {
+  width: 98%;
 }
 
 

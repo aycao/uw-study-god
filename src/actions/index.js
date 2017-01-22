@@ -2,6 +2,8 @@ import Utils from '../utils/Utils';
 import Constants from '../utils/Constants';
 
 
+// Courses
+
 export function fetchAllCoursesAC(){
   const request = Utils.makeCourseApiPromise(Constants.API_COURSE_BASE_ROUTE);
   return {
@@ -15,5 +17,23 @@ export function fetchAllCourseCodesAC(){
   return {
     type: Constants.FETCH_ALL_COURSE_CODES,
     payload: request,
+  }
+}
+
+
+// Terms
+
+export function fetchAllTermsAC(){
+  const request = Utils.makeCourseApiPromise(Constants.API_TERM_LIST_BASE_ROUTE);
+  return {
+    type: Constants.FETCH_ALL_TERMS,
+    payload: request,
+  }
+}
+
+export function setActiveTermAC(term){
+  return {
+    type: Constants.SET_ACTIVE_TERM,
+    payload: term,
   }
 }

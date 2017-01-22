@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from "lodash";
-import {Col, Tabs, Tab} from 'react-bootstrap';
+import {Col, Row, Tab, Nav, NavItem} from 'react-bootstrap';
 
 
 class DetailPanel extends Component{
@@ -16,12 +16,15 @@ class DetailPanel extends Component{
     return(
       <Col md={8} className="detail-panel-container">
         <div className="level-tabs-container">
-          <Tabs
-              activeKey={this.state.activeCourseLevel}
-              onSelect={this.handleSelectCourseLevel}
-              id="course-level-tabs">
-            {this.makeLevelTabs([100,200,400])}
-          </Tabs>
+          <Nav bsStyle="tabs"
+               activeKey={this.state.activeCourseLevel}
+               onSelect={this.handleSelectCourseLevel}
+               id="course-level-tabs">
+            {this.makeLevelNavItems()}
+          </Nav>
+        </div>
+        <div className="level-tab-content-container">
+
         </div>
       </Col>
     );
@@ -31,26 +34,29 @@ class DetailPanel extends Component{
     this.setState({activeCourseLevel: key});
   }
 
-  makeLevelTabs(offeringLevels) {
+  makeLevelNavItems() {
     const allLevels = [100, 200, 300, 400];
-    let levelTabs = allLevels.map((level) => {
-      let props = {
-        key: level,
-        eventKey: level,
-        title: level,
-      };
-      if(!_.includes(offeringLevels, level)){
-        props = {...props, disabled: true}
-      }
+    let navTabItems = allLevels.map((level) => {
       return (
-          <Tab {...props}>
-              My level is {level}
-          </Tab>);
+          <NavItem key={level} eventKey={level}>
+            {level}
+          </NavItem>);
     });
-    levelTabs = [<Tab key={0} eventKey={0} title="All">All</Tab>, ...levelTabs];
-    return levelTabs;
+    navTabItems = [<NavItem key={0} eventKey={0} title="All">All</NavItem>, ...navTabItems];
+    return navTabItems;
   }
 
+  makeLevelTabContents(){
+    const allLevels = [100, 200, 300, 400];
+    let tabContents = allLevels.map((level) => {
+      return (
+          <Tab.Pane key={level} eventKey={level}>
+            My level is {level}
+          </Tab.Pane>);
+    });
+    tabContents = [<Tab.Pane key={0} eventKey={0} title="All">All</Tab.Pane>, ...tabContents];
+    return tabContents;
+  }
 }
 
 
