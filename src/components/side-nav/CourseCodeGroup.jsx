@@ -1,27 +1,56 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import _ from 'lodash';
-import {Panel, ListGroup, ListGroupItem, Label} from 'react-bootstrap';
 
-const makeCourseCodeListGroupItems = (courseCodes) => {
-  return (
-      _.map(courseCodes, (courseCode) => {
-        return (
-            <ListGroupItem header={courseCode.subject} >
-              <span>{courseCode.description} <Label>{courseCode.group}</Label></span>
-            </ListGroupItem>)
-      })
-  );
+import {ListGroup, ListGroupItem, Label} from 'react-bootstrap';
+
+import {setActiveCourseCodeAC} from '../../actions';
+
+class CourseCodeGroup extends Component{
+
+  constructor(props){
+    super(props);
+    this.handleCourseCodeClick = this.handleCourseCodeClick.bind(this);
+  }
+
+
+  render(){
+    const {courseCodes, activeCourseCode} = this.props;
+    return(
+        <ListGroup>
+          {this.makeCourseCodeListGroupItems(courseCodes, activeCourseCode)}
+        </ListGroup>
+    );
+  }
+
+  makeCourseCodeListGroupItems(courseCodes, activeCourseCode){
+    return (
+        _.map(courseCodes, (courseCode) => {
+          const className = `course-code-list-item ${courseCode === activeCourseCode? 'active': ''}`;
+          return (
+              <ListGroupItem
+                  className={className}
+                  header={courseCode.subject}
+                  key={courseCode.subject}
+                  onClick={() => {this.handleCourseCodeClick(courseCode)}}>
+                <span>{courseCode.description} <Label>{courseCode.group}</Label></span>
+              </ListGroupItem>)
+        })
+    );
+  };
+
+  handleCourseCodeClick(courseCode){
+    console.log("courseCode: ", courseCode);
+    this.props.setActiveCourseCode(courseCode);
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setActiveCourseCode: (courseCode) => {
+      dispatch(setActiveCourseCodeAC(courseCode));
+    }
+  }
 };
 
-const CourseCodeGroup = (props) => {
-  const courseCodes = props.courseCodes;
-  return(
-      <ListGroup>
-        {makeCourseCodeListGroupItems(courseCodes)}
-      </ListGroup>
-  );
-};
-
-
-
-export default CourseCodeGroup;
+export default connect(null, mapDispatchToProps)(CourseCodeGroup);

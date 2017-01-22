@@ -18,7 +18,6 @@ class Home extends Component{
     if(this.props.terms.all.length <= 0){
       return <div>loading data</div>
     }else{
-      console.log(this.props.terms);
       return (
           <div className="app">
             <Header/>

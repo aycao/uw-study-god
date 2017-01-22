@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from "lodash";
-import {Col, Row, Tab, Nav, NavItem} from 'react-bootstrap';
+import {Col, Tab, Nav, NavItem} from 'react-bootstrap';
 
 
 class DetailPanel extends Component{

@@ -1,32 +1,47 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import {Accordion, Panel} from 'react-bootstrap';
+import Collapse, {Panel} from 'rc-collapse';
+import 'rc-collapse/assets/index.css';
 
 import CourseCodeGroup from './CourseCodeGroup';
 
 
 class CourseCodeList extends Component{
 
+  constructor(props){
+    super(props);
+    this.onCollapseChange = this.onCollapseChange.bind(this);
+    this.state = {activeKey: ''}
+  }
+
   render(){
     if(this.props.courseCodes.all.length <= 0){
       return <div>loading courses</div>;
     }
     return(
-        <Accordion className="course-code-accordion">
-          {this.makeCourseCodePanels(this.props.courseCodes.all)}
-        </Accordion>
+        <Collapse
+            accordion={false}
+            activeKey={this.state.activeKey}
+            onChange={this.onCollapseChange}
+            className="course-code-collapse">
+          {this.makeCourseCodePanels(this.props.courseCodes.all, this.props.courseCodes.activeCourseCode)}
+        </Collapse>
     );
   }
 
-  makeCourseCodePanels(courseCodes){
+  onCollapseChange(newActiveKey){
+    this.setState({activeKey: newActiveKey});
+  }
+
+  makeCourseCodePanels(courseCodes, activeCourseCode){
     const courseCodeGroupesByInitial = _.groupBy(courseCodes, (courseCode) => {
       return _.head(courseCode.subject);
     });
     return _.map(courseCodeGroupesByInitial, (value, key) => {
       return (
-          <Panel eventKey={key} header={key} key={key}>
-            <CourseCodeGroup courseCodes={value}  />
+          <Panel header={key} key={key}>
+            <CourseCodeGroup courseCodes={value} activeCourseCode={activeCourseCode}  />
           </Panel>
       )
     });

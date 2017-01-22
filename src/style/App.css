@@ -55,8 +55,10 @@ html, body {
   overflow: scroll;
 }
 
-.course-code-list-item {
-  width: 98%;
+.course-code-list-item:focus,
+.course-code-list-item.active
+{
+  outline: none;
 }
 
 

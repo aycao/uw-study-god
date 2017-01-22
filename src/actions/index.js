@@ -20,6 +20,13 @@ export function fetchAllCourseCodesAC(){
   }
 }
 
+export function setActiveCourseCodeAC(courseCode){
+  return {
+    type: Constants.SET_ACTIVE_COURSE_CODE,
+    payload: courseCode,
+  }
+}
+
 
 // Terms
 
