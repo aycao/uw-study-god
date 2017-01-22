@@ -20,6 +20,14 @@ export function fetchAllCourseCodesAC(){
   }
 }
 
+export function fetchOfferingCoursesAC(termId){
+  const request = Utils.makeCourseApiPromise(`${Constants.API_TERM_BASE_ROUTE}/${termId}${Constants.API_COURSE_BASE_ROUTE}`);
+  return {
+    type: Constants.FETCH_OFFERING_COURSES,
+    payload: request,
+  }
+}
+
 export function setActiveCourseCodeAC(courseCode){
   return {
     type: Constants.SET_ACTIVE_COURSE_CODE,

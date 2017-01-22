@@ -35,9 +35,7 @@ class CourseCodeList extends Component{
   }
 
   makeCourseCodePanels(courseCodes, activeCourseCode){
-    const courseCodeGroupesByInitial = _.groupBy(courseCodes, (courseCode) => {
-      return _.head(courseCode.subject);
-    });
+    const courseCodeGroupesByInitial = _.groupBy(courseCodes, 'igroup');
     return _.map(courseCodeGroupesByInitial, (value, key) => {
       return (
           <Panel header={key} key={key}>

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Header from '../header/Header';
 import SideNav from '../side-nav/SideNav';
 import DetailPanel from '../detail-panel/DetailPanel';
-import {fetchAllCoursesAC, fetchAllCourseCodesAC, fetchAllTermsAC} from '../../actions';
+import {fetchAllCoursesAC, fetchAllCourseCodesAC, fetchAllTermsAC, fetchOfferingCoursesAC} from '../../actions';
 
 class Home extends Component{
   constructor(props){
@@ -29,6 +29,13 @@ class Home extends Component{
       );
     }
   }
+
+  componentDidUpdate(){
+    if(!!this.props.terms.activeTerm && this.props.courses.offeringCourses <= 0){
+      this.props.fetchOfferingCourses(this.props.terms.activeTerm.id);
+    }
+  }
+
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -42,11 +49,17 @@ const mapDispatchToProps = (dispatch) => {
     fetchAllTerms: () => {
       dispatch(fetchAllTermsAC())
     },
+    fetchOfferingCourses: (termId) => {
+      dispatch(fetchOfferingCoursesAC(termId))
+    }
   }
 };
 
 const mapStateToProps = (state) => {
-  return {terms: state.terms};
+  return {
+    terms: state.terms,
+    courses: state.courses,
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

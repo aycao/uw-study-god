@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import _ from "lodash";
 import {Col, Tab, Nav, NavItem} from 'react-bootstrap';
 
@@ -59,11 +58,4 @@ class DetailPanel extends Component{
   }
 }
 
-
-const mapStateToProps = (state) => {
-  return {
-    activeCourse: state.courses.activeCourse,
-  }
-};
-
-export default connect(mapStateToProps)(DetailPanel);
+export default DetailPanel;
