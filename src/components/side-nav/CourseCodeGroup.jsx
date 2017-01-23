@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import {ListGroup, ListGroupItem, Label} from 'react-bootstrap';
 
-import {setActiveCourseCodeAC} from '../../actions';
+import {setActiveCourseCodeAC, fetchSelectedCoursesAC} from '../../actions';
 
 class CourseCodeGroup extends Component{
 
@@ -42,6 +42,7 @@ class CourseCodeGroup extends Component{
   handleCourseCodeClick(courseCode){
     console.log("courseCode: ", courseCode);
     this.props.setActiveCourseCode(courseCode);
+    this.props.fetchSelectedCourses(courseCode.id);
   }
 }
 
@@ -49,6 +50,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setActiveCourseCode: (courseCode) => {
       dispatch(setActiveCourseCodeAC(courseCode));
+    },
+    fetchSelectedCourses: (courseCode) => {
+      dispatch(fetchSelectedCoursesAC(courseCode));
     }
   }
 };

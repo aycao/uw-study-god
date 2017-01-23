@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import _ from "lodash";
 import {Col, Tab, Nav, NavItem} from 'react-bootstrap';
+
+import CourseList from './CourseList';
 
 
 class DetailPanel extends Component{
@@ -23,14 +26,21 @@ class DetailPanel extends Component{
           </Nav>
         </div>
         <div className="level-tab-content-container">
-
+          <CourseList/>
         </div>
       </Col>
     );
   }
 
   handleSelectCourseLevel(key){
-    this.setState({activeCourseLevel: key});
+
+    this.setState({
+      activeCourseLevel: key,
+    });
+  }
+
+  getActiveCourseList(level){
+
   }
 
   makeLevelNavItems() {
@@ -45,17 +55,12 @@ class DetailPanel extends Component{
     return navTabItems;
   }
 
-  makeLevelTabContents(){
-    const allLevels = [100, 200, 300, 400];
-    let tabContents = allLevels.map((level) => {
-      return (
-          <Tab.Pane key={level} eventKey={level}>
-            My level is {level}
-          </Tab.Pane>);
-    });
-    tabContents = [<Tab.Pane key={0} eventKey={0} title="All">All</Tab.Pane>, ...tabContents];
-    return tabContents;
-  }
 }
 
-export default DetailPanel;
+const mapStateToProps = (state) => {
+  return {
+    courses: state.courses,
+  }
+};
+
+export default connect(mapStateToProps)(DetailPanel);
