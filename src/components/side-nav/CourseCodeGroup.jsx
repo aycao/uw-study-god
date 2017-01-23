@@ -40,9 +40,8 @@ class CourseCodeGroup extends Component{
   };
 
   handleCourseCodeClick(courseCode){
-    console.log("courseCode: ", courseCode);
     this.props.setActiveCourseCode(courseCode);
-    this.props.fetchSelectedCourses(courseCode.id);
+    this.props.fetchSelectedCourses(courseCode.subject);
   }
 }
 

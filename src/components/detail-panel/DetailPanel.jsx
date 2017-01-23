@@ -10,7 +10,7 @@ class DetailPanel extends Component{
 
   constructor(props){
     super(props);
-    this.state = {activeCourseLevel: 0,};
+    this.state = {activeCourseLevel: 0};
     this.handleSelectCourseLevel = this.handleSelectCourseLevel.bind(this);
   }
 
@@ -26,7 +26,7 @@ class DetailPanel extends Component{
           </Nav>
         </div>
         <div className="level-tab-content-container">
-          <CourseList/>
+          <CourseList courseList={this.getActiveCourseList(this.state.activeCourseLevel)}/>
         </div>
       </Col>
     );
@@ -40,7 +40,7 @@ class DetailPanel extends Component{
   }
 
   getActiveCourseList(level){
-
+    console.log(level);
   }
 
   makeLevelNavItems() {

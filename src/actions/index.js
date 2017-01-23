@@ -12,8 +12,8 @@ export function fetchAllCoursesAC(){
   }
 }
 
-export function fetchSelectedCoursesAC(courseCodeId){
-  const request = Utils.makeCourseApiPromise(`${Constants.API_COURSE_BASE_ROUTE}/${courseCodeId}`);
+export function fetchSelectedCoursesAC(courseCodeSubject){
+  const request = Utils.makeCourseApiPromise(`${Constants.API_COURSE_BASE_ROUTE}/${courseCodeSubject}`);
   return {
     type: Constants.FETCH_SELECTED_COURSES,
     payload: request,
