@@ -1,36 +1,49 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import ReactList from 'react-list';
+import _ from 'lodash';
+import Collapse, {Panel} from 'rc-collapse';
+import 'rc-collapse/assets/index.css';
 
-import CourseCodeListItem from './CourseCodeListItem';
+import CourseCodeGroup from './CourseCodeGroup';
 
 
 class CourseCodeList extends Component{
+
   constructor(props){
     super(props);
-    this.renderCourseCodeItem = this.renderCourseCodeItem.bind(this);
+    this.onCollapseChange = this.onCollapseChange.bind(this);
+    this.state = {activeKey: ''}
   }
+
   render(){
-    if(this.props.courseCodes.length <= 0){
+    if(this.props.courseCodes.all.length <= 0){
       return <div>loading courses</div>;
     }
     return(
-        <div className="course-code-list-container">
-          <ReactList
-              length={this.props.courseCodes.length}
-              itemRenderer={this.renderCourseCodeItem}
-              type="uniform">
-          </ReactList>
-        </div>
+        <Collapse
+            accordion={false}
+            activeKey={this.state.activeKey}
+            onChange={this.onCollapseChange}
+            className="course-code-collapse">
+          {this.makeCourseCodePanels(this.props.courseCodes.all, this.props.courseCodes.activeCourseCode)}
+        </Collapse>
     );
   }
 
-  renderCourseCodeItem(index, key){
-    return( <CourseCodeListItem
-        key={key}
-        courseCode={this.props.courseCodes[index]}
-    />)
-  };
+  onCollapseChange(newActiveKey){
+    this.setState({activeKey: newActiveKey});
+  }
+
+  makeCourseCodePanels(courseCodes, activeCourseCode){
+    const courseCodeGroupesByInitial = _.groupBy(courseCodes, 'igroup');
+    return _.map(courseCodeGroupesByInitial, (value, key) => {
+      return (
+          <Panel header={key} key={key}>
+            <CourseCodeGroup courseCodes={value} activeCourseCode={activeCourseCode}  />
+          </Panel>
+      )
+    });
+  }
 
 }
 
@@ -38,7 +51,7 @@ class CourseCodeList extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    courseCodes: state.courseCodes.all,
+    courseCodes: state.courseCodes,
   }
 };
 

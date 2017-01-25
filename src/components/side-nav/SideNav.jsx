@@ -1,14 +1,15 @@
 import React from 'react';
+import {Col} from 'react-bootstrap';
 
 import CourseCodeSearchBar from './CourseCodeSearchBar';
 import CourseCodeList from './CourseCodeList';
 
 const SideNav = (props) => {
   return(
-    <div className="side-nav-container col-md-4">
+    <Col md={4} className="side-nav-container">
       <CourseCodeSearchBar/>
       <CourseCodeList/>
-    </div>
+    </Col>
   );
 };
 
