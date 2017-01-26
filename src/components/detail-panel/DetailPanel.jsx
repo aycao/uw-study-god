@@ -10,8 +10,9 @@ class DetailPanel extends Component{
 
   constructor(props){
     super(props);
-    this.state = {activeCourseLevel: 0};
+    this.state = {activeCourseLevel: 'all'};
     this.handleSelectCourseLevel = this.handleSelectCourseLevel.bind(this);
+    this.getActiveCourseList = this.getActiveCourseList.bind(this);
   }
 
   render(){
@@ -26,32 +27,32 @@ class DetailPanel extends Component{
           </Nav>
         </div>
         <div className="level-tab-content-container">
-          <CourseList courseList={this.getActiveCourseList(this.state.activeCourseLevel)}/>
+          <CourseList courses={this.getActiveCourseList(this.state.activeCourseLevel)}/>
         </div>
       </Col>
     );
   }
 
   handleSelectCourseLevel(key){
-
     this.setState({
       activeCourseLevel: key,
     });
   }
 
   getActiveCourseList(level){
-    console.log(level);
+    const selectedCourses = this.props.courses.selectedCourses;
+    return level === 'all'? selectedCourses: _.filter(selectedCourses, {level: level});
   }
 
   makeLevelNavItems() {
-    const allLevels = [100, 200, 300, 400];
+    const allLevels = ['100', '200', '300', '400'];
     let navTabItems = allLevels.map((level) => {
       return (
           <NavItem key={level} eventKey={level}>
             {level}
           </NavItem>);
     });
-    navTabItems = [<NavItem key={0} eventKey={0} title="All">All</NavItem>, ...navTabItems];
+    navTabItems = [<NavItem key={'all'} eventKey={'all'} title="All">All</NavItem>, ...navTabItems];
     return navTabItems;
   }
 

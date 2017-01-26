@@ -17,10 +17,17 @@ const CourseReducer = (state_courses = INITIAL_STATE, action) => {
     case Constants.FETCH_OFFERING_COURSES:
       return {...state_courses, offeringCourses: action.payload.data.data};
     case Constants.FETCH_SELECTED_COURSES:
-      const courses = _.forEach(action.payload.data.data,(value) => {
-        _.assign(value, {level: `${_.head(value.catalog_number)}00`})
+      let offeringCatalogNumbers = [];
+      if(state_courses.offeringCourses.length > 0){
+        offeringCatalogNumbers = _.map(_.filter(state_courses.offeringCourses, {subject: action.courseCode}), 'catalog_number');
+      }
+      const courses = _.forEach(action.payload.data.data,(course) => {
+        
+        _.assign(course, {
+          level: `${_.head(course.catalog_number)}00`,
+          offering: _.includes(offeringCatalogNumbers, course.catalog_number)
+        });
       });
-      console.log(courses);
       return {...state_courses, selectedCourses: courses};
     default:
       return state_courses;

@@ -52,13 +52,17 @@ html, body {
 
 .course-code-list-container {
   height: 90%;
-  overflow: scroll;
 }
 
 .course-code-list-item:focus,
 .course-code-list-item.active
 {
   outline: none;
+}
+
+.detail-panel-container {
+  height: 100%;
+  overflow: scroll;
 }
 
 
