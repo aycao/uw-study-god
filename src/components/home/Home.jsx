@@ -24,17 +24,11 @@ class Home extends Component{
               <SideNav/>
               <DetailPanel/>
             </div>
+            <a href="#" onClick={() => {console.log('terms: ', this.props.terms); console.log('courses: ', this.props.courses)}}>check state</a>
           </div>
       );
     }
   }
-
-  componentDidUpdate(){
-    if(!!this.props.terms.activeTerm && this.props.courses.offeringCourses <= 0){
-      this.props.fetchOfferingCourses(this.props.terms.activeTerm.id);
-    }
-  }
-
 }
 
 const mapDispatchToProps = (dispatch) => {

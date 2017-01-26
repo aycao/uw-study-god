@@ -6,33 +6,50 @@ import Constants from '../utils/Constants';
 
 export function fetchAllCoursesAC(){
   const request = Utils.makeCourseApiPromise(Constants.API_COURSE_BASE_ROUTE);
-  return {
-    type: Constants.FETCH_ALL_COURSES,
-    payload: request,
+  return (dispatch) => {
+    request.then((data) => {
+      dispatch({
+        type: Constants.FETCH_ALL_COURSES,
+        payload: data,
+      })
+    })
   }
 }
 
 export function fetchSelectedCoursesAC(courseCodeSubject){
   const request = Utils.makeCourseApiPromise(`${Constants.API_COURSE_BASE_ROUTE}/${courseCodeSubject}`);
-  return {
-    type: Constants.FETCH_SELECTED_COURSES,
-    payload: request,
+  return (dispatch) => {
+    request.then((data) => {
+      dispatch({
+        type: Constants.FETCH_SELECTED_COURSES,
+        payload: data,
+        courseCode: courseCodeSubject,
+      })
+    })
   }
 }
 
 export function fetchAllCourseCodesAC(){
   const request = Utils.makeCourseApiPromise(Constants.API_COURSE_CODE_BASE_ROUTE);
-  return {
-    type: Constants.FETCH_ALL_COURSE_CODES,
-    payload: request,
+  return (dispatch) => {
+    request.then((data) => {
+      dispatch({
+        type: Constants.FETCH_ALL_COURSE_CODES,
+        payload: data,
+      });
+    });
   }
 }
 
 export function fetchOfferingCoursesAC(termId){
   const request = Utils.makeCourseApiPromise(`${Constants.API_TERM_BASE_ROUTE}/${termId}${Constants.API_COURSE_BASE_ROUTE}`);
-  return {
-    type: Constants.FETCH_OFFERING_COURSES,
-    payload: request,
+  return (dispatch) => {
+    request.then((data) =>{
+      dispatch({
+        type: Constants.FETCH_OFFERING_COURSES,
+        payload: data,
+      });
+    });
   }
 }
 
@@ -48,15 +65,23 @@ export function setActiveCourseCodeAC(courseCode){
 
 export function fetchAllTermsAC(){
   const request = Utils.makeCourseApiPromise(Constants.API_TERM_LIST_BASE_ROUTE);
-  return {
-    type: Constants.FETCH_ALL_TERMS,
-    payload: request,
+  return (dispatch) => {
+    request.then((data) => {
+      dispatch({
+        type: Constants.FETCH_ALL_TERMS,
+        payload: data,
+      });
+      dispatch(setActiveTermAC(data.data.data.current_term));
+    });
   }
 }
 
 export function setActiveTermAC(term){
-  return {
-    type: Constants.SET_ACTIVE_TERM,
-    payload: term,
+  return (dispatch) => {
+    dispatch({
+      type: Constants.SET_ACTIVE_TERM,
+      payload: term,
+    });
+    dispatch(fetchOfferingCoursesAC(term));
   }
 }

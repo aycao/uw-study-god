@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="841027ac-266c-4528-8323-65eced20b82e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/UniversityOfWaterloo_logo_vert_bk_badge.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/UniversityOfWaterloo_logo_vert_bk/UniversityOfWaterloo_logo_vert_bk.eps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/UniversityOfWaterloo_logo_vert_bk/UniversityOfWaterloo_logo_vert_bk.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/UniversityOfWaterloo_logo_vert_bk/UniversityOfWaterloo_logo_vert_bk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/UniversityOfWaterloo_logo_vert_bk/UniversityOfWaterloo_logo_vert_bk_badge.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/UniversityOfWaterloo_logo_vert_bk/readme.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/detail-panel/CourseList.jsx" afterPath="$PROJECT_DIR$/src/components/detail-panel/CourseList.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/detail-panel/DetailPanel.jsx" afterPath="$PROJECT_DIR$/src/components/detail-panel/DetailPanel.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/side-nav/CourseCodeGroup.jsx" afterPath="$PROJECT_DIR$/src/components/side-nav/CourseCodeGroup.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/Home.jsx" afterPath="$PROJECT_DIR$/src/components/home/Home.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/reducer_courses.js" afterPath="$PROJECT_DIR$/src/reducers/reducer_courses.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/reducer_termids.js" afterPath="$PROJECT_DIR$/src/reducers/reducer_termids.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style/App.css" afterPath="$PROJECT_DIR$/src/style/App.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +54,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="527">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,8 +74,8 @@
       <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/home/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            <state relative-caret-position="215">
+              <caret line="26" column="140" lean-forward="false" selection-start-line="26" selection-start-column="140" selection-end-line="26" selection-end-column="140" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -71,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DetailPanel.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DetailPanel.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/detail-panel/DetailPanel.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+            <state relative-caret-position="204">
+              <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -83,12 +95,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseList.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CourseList.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/detail-panel/CourseList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="476">
+              <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,8 +110,8 @@
       <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+            <state relative-caret-position="441">
+              <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -106,8 +120,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+            <state relative-caret-position="408">
+              <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -158,8 +172,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -170,8 +184,8 @@
       <file leaf-file-name="reducer_courses.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/reducer_courses.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+            <state relative-caret-position="493">
+              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -182,8 +196,8 @@
       <file leaf-file-name="reducer_termids.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/reducer_termids.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="15" column="95" lean-forward="false" selection-start-line="15" selection-start-column="95" selection-end-line="15" selection-end-column="95" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -204,8 +218,8 @@
       <file leaf-file-name="CourseCodeGroup.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/side-nav/CourseCodeGroup.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="36" lean-forward="true" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+            <state relative-caret-position="433">
+              <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -216,9 +230,11 @@
       <file leaf-file-name="reducer_course_codes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/reducer_course_codes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -230,6 +246,7 @@
               <caret line="38" column="62" lean-forward="false" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+                <marker date="1485103836000" expanded="true" signature="428:858" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -241,6 +258,8 @@
     <findStrings>
       <find>props</find>
       <find>console.log</find>
+      <find>promise</find>
+      <find>re</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -255,27 +274,27 @@
         <option value="$PROJECT_DIR$/src/utils/Utils.js" />
         <option value="$PROJECT_DIR$/src/components/side-nav/CourseList.jsx" />
         <option value="$PROJECT_DIR$/src/components/side-nav/CourseCodeSearchBar.jsx" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/side-nav/SideNav.jsx" />
         <option value="$PROJECT_DIR$/src/components/side-nav/CourseCodeListItem.jsx" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/reducers/reducer_terms" />
         <option value="$PROJECT_DIR$/src/reducers/reducer_terms.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/components/side-nav/CourseCodeGroupItem.jsx" />
         <option value="$PROJECT_DIR$/src/components/header/Header.jsx" />
         <option value="$PROJECT_DIR$/src/app.js" />
-        <option value="$PROJECT_DIR$/src/reducers/reducer_course_codes.js" />
         <option value="$PROJECT_DIR$/src/components/side-nav/CourseCodeList.jsx" />
-        <option value="$PROJECT_DIR$/src/style/App.css" />
-        <option value="$PROJECT_DIR$/src/reducers/reducer_termids.js" />
-        <option value="$PROJECT_DIR$/src/components/detail-panel/CourseList.jsx" />
-        <option value="$PROJECT_DIR$/src/components/home/Home.jsx" />
         <option value="$PROJECT_DIR$/src/utils/Constants.js" />
         <option value="$PROJECT_DIR$/src/components/side-nav/CourseCodeGroup.jsx" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/reducers/reducer_course_codes.js" />
+        <option value="$PROJECT_DIR$/src/components/home/Home.jsx" />
+        <option value="$PROJECT_DIR$/src/reducers/reducer_termids.js" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/reducers/reducer_courses.js" />
         <option value="$PROJECT_DIR$/src/components/detail-panel/DetailPanel.jsx" />
+        <option value="$PROJECT_DIR$/src/style/App.css" />
+        <option value="$PROJECT_DIR$/src/components/detail-panel/CourseList.jsx" />
       </list>
     </option>
   </component>
@@ -291,7 +310,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
+    <option name="x" value="31" />
     <option name="y" value="23" />
     <option name="width" value="1507" />
     <option name="height" value="987" />
@@ -560,7 +579,7 @@
     <property name="nodejs_interpreter_path" value="/opt/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="$PROJECT_DIR$/node_modules/react-scripts/node_modules/eslint" />
     <property name="js-jscs-nodeInterpreter" value="/opt/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="reducercoursecode&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_course_codes.js&#10;header&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/header/Header.jsx&#10;reducer/ind&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/index.js&#10;reducer terms&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_terms&#10;action/inde&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/actions/index.js&#10;rootredu&#9;null&#9;null&#10;course&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeList.jsx&#10;reducer ter&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_terms&#10;reducer/index&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/index.js&#10;terms&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_terms&#10;courselist&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeList.jsx&#10;coursecodesea&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeSearchBar.jsx&#10;sidenav&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/SideNav.jsx&#10;reducer/inde&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/index.js&#10;home.js&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/home/Home.jsx&#10;const&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/utils/Constants.js&#10;reducer term&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_terms&#10;Constants&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/utils/Constants.js&#10;actions/ind&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/actions/index.js&#10;actions&#9;null&#9;null&#10;index.js&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/index.js&#10;home&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/home/Home.jsx&#10;app.js&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/app.js&#10;coursecodeitem&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeListItem.jsx&#10;inde&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/public/index.html&#10;detail&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/detail-panel/DetailPanel.jsx&#10;coursecodelist&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeList.jsx&#10;app&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/app.js&#10;app.&#9;FILE&#9;file:///Users/acao/workspace/uw-study-god/src/app.js&#10;CourseList&#9;FILE&#9;file:///Users/acao/workspace/uw-study-god/src/components/side-nav/CourseList.jsx" />
+    <property name="SearchEverywhereHistoryKey" value="action&#9;null&#9;null&#10;rootreducer&#9;null&#9;null&#10;rootredu&#9;null&#9;null&#10;pac&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/node_modules/react-bootstrap/package.json&#10;reducercoursecode&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_course_codes.js&#10;header&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/header/Header.jsx&#10;reducer/ind&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/index.js&#10;reducer terms&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_terms&#10;action/inde&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/actions/index.js&#10;course&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeList.jsx&#10;reducer ter&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_terms&#10;reducer/index&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/index.js&#10;terms&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_terms&#10;courselist&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeList.jsx&#10;coursecodesea&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeSearchBar.jsx&#10;sidenav&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/SideNav.jsx&#10;reducer/inde&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/index.js&#10;home.js&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/home/Home.jsx&#10;const&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/utils/Constants.js&#10;reducer term&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/reducers/reducer_terms&#10;Constants&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/utils/Constants.js&#10;actions/ind&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/actions/index.js&#10;actions&#9;null&#9;null&#10;index.js&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/index.js&#10;home&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/home/Home.jsx&#10;app.js&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/app.js&#10;coursecodeitem&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeListItem.jsx&#10;inde&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/public/index.html&#10;detail&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/detail-panel/DetailPanel.jsx&#10;coursecodelist&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/components/side-nav/CourseCodeList.jsx&#10;app&#9;FILE&#9;file:///Users/alfred/workspace/web/uw-study-god/src/app.js&#10;app.&#9;FILE&#9;file:///Users/acao/workspace/uw-study-god/src/app.js&#10;CourseList&#9;FILE&#9;file:///Users/acao/workspace/uw-study-god/src/components/side-nav/CourseList.jsx" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
@@ -645,12 +664,12 @@
       <updated>1484795568474</updated>
       <workItem from="1484795570687" duration="14000" />
       <workItem from="1484877464971" duration="13596000" />
-      <workItem from="1484959292818" duration="45139000" />
+      <workItem from="1484959292818" duration="58453000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58749000" />
+    <option name="totallyTimeSpent" value="72063000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,9 +681,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="23" width="1507" height="987" extended-state="0" />
+    <frame x="31" y="23" width="1507" height="987" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27725437" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -750,6 +770,7 @@
           <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <marker date="1485103836000" expanded="true" signature="428:858" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -866,14 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/reducer_terms.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -906,62 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-bootstrap/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2959">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/reducer_termids.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/home/Home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -988,64 +945,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/reducer_course_codes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/side-nav/CourseCodeList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="38" column="62" lean-forward="false" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <marker date="1485103836000" expanded="true" signature="428:858" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        <state relative-caret-position="527">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/reducer_courses.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/react-bootstrap/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="-397">
+          <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/reducer_course_codes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/detail-panel/CourseList.jsx">
+    <entry file="file://$PROJECT_DIR$/node_modules/redux/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        <state relative-caret-position="255">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/side-nav/CourseCodeGroup.jsx">
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="36" lean-forward="true" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+        <state relative-caret-position="153">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/home/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="26" column="140" lean-forward="false" selection-start-line="26" selection-start-column="140" selection-end-line="26" selection-end-column="140" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/side-nav/CourseCodeGroup.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/reducer_termids.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="95" lean-forward="false" selection-start-line="15" selection-start-column="95" selection-end-line="15" selection-end-column="95" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/reducer_courses.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/detail-panel/DetailPanel.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        <state relative-caret-position="204">
+          <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/detail-panel/CourseList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
