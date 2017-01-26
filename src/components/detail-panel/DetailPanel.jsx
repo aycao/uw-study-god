@@ -17,7 +17,7 @@ class DetailPanel extends Component{
 
   render(){
     return(
-      <Col md={8} className="detail-panel-container">
+      <Col md={8} sm={12} className="detail-panel-container">
         <div className="level-tabs-container">
           <Nav bsStyle="tabs"
                activeKey={this.state.activeCourseLevel}
