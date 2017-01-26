@@ -1,0 +1,25 @@
+
+
+.detail-panel-container {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    display: block;
+}
+
+.course-list-container .panel {
+    margin-bottom: 10px;
+}
+
+.course-list-item h4, .panel-heading {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.course-list-item .panel-heading-clickable {
+    padding: 15px;
+}
+

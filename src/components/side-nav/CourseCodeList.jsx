@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import Collapse, {Panel} from 'rc-collapse';
-import 'rc-collapse/assets/index.css';
+import {Panel} from 'react-bootstrap';
 
 import CourseCodeGroup from './CourseCodeGroup';
 
@@ -20,13 +19,9 @@ class CourseCodeList extends Component{
       return <div>loading courses</div>;
     }
     return(
-        <Collapse
-            accordion={false}
-            activeKey={this.state.activeKey}
-            onChange={this.onCollapseChange}
-            className="course-code-collapse">
+        <div className="course-code-list-container">
           {this.makeCourseCodePanels(this.props.courseCodes.all, this.props.courseCodes.activeCourseCode)}
-        </Collapse>
+        </div>
     );
   }
 
@@ -36,10 +31,13 @@ class CourseCodeList extends Component{
 
   makeCourseCodePanels(courseCodes, activeCourseCode){
     const courseCodeGroupesByInitial = _.groupBy(courseCodes, 'igroup');
-    return _.map(courseCodeGroupesByInitial, (value, key) => {
+    return _.map(courseCodeGroupesByInitial, (groupedCourseCodes, initial) => {
       return (
-          <Panel header={key} key={key}>
-            <CourseCodeGroup courseCodes={value} activeCourseCode={activeCourseCode}  />
+          <Panel header={<span><h4 className="panel-heading-clickable">{initial}</h4></span>}
+                 key={initial}
+                 className="course-code-list-item"
+                 collapsible>
+            <CourseCodeGroup courseCodes={groupedCourseCodes} activeCourseCode={activeCourseCode}  />
           </Panel>
       )
     });

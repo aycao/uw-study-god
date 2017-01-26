@@ -26,7 +26,7 @@ class CourseCodeGroup extends Component{
   makeCourseCodeListGroupItems(courseCodes, activeCourseCode){
     return (
         _.map(courseCodes, (courseCode) => {
-          const className = `course-code-list-item ${courseCode === activeCourseCode? 'active': ''}`;
+          const className = `course-code-list-group-item ${courseCode === activeCourseCode? 'active': ''}`;
           return (
               <ListGroupItem
                   className={className}

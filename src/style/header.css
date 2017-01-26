@@ -1,0 +1,9 @@
+.page-header {
+    position: relative;
+    margin: 0;
+    height: 10%;
+}
+
+.page-header h2 {
+    margin: 0;
+}

@@ -1,0 +1,40 @@
+
+.side-nav-container {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    display: block;
+}
+
+.course-code-search-bar-container {
+    height: 10%;
+}
+
+.course-code-list-container {
+    height: 90%;
+}
+
+.course-code-list-item:focus,
+.course-code-list-item.active,
+.course-code-list-group-item:focus,
+.course-code-list-group-item.active
+{
+    outline: none;
+}
+
+.course-code-list-container .panel {
+    margin-bottom: 5px;
+}
+
+.course-code-list-item h4, .panel-heading {
+    margin: 0;
+    padding: 0;
+}
+
+.course-code-list-item .panel-heading-clickable {
+    padding: 10px;
+}
+
+
+

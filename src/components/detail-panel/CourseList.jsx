@@ -29,7 +29,7 @@ class CourseList extends Component{
                key={course.course_id}
                className={className}
                onSelect={() => this.handleCourseSelect(course.course_id)}
-               header={<span><h4>{course.subject} {course.catalog_number} {course.title}</h4></span>}>
+               header={<span><h4 className="panel-heading-clickable">{course.subject} {course.catalog_number} {course.title}</h4></span>}>
           jjj
         </Panel>
       );

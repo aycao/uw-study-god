@@ -1,23 +1,6 @@
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
+@import "sideNav.css";
+@import "detailPanel.css";
+@import "header.css";
 
 html, body {
   height: 100%;
@@ -30,16 +13,6 @@ html, body {
   overflow: hidden;
 }
 
-.page-header {
-  position: relative;
-  margin: 0;
-  height: 10%;
-}
-
-.page-header h2 {
-  margin: 0;
-}
-
 .content {
   position: relative;
   display: flex;
@@ -47,39 +20,11 @@ html, body {
   height: 90%;
 }
 
-.side-nav-container {
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-  display: block;
-}
 
-.course-code-search-bar-container {
-  height: 10%;
-}
+/**************************/
+/* Override bootstrap css */
+/**************************/
 
-.course-code-list-container {
-  height: 90%;
-}
-
-.course-code-list-item:focus,
-.course-code-list-item.active
-{
-  outline: none;
-}
-
-.detail-panel-container {
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-  display: block;
-}
-
-
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+* {
+  border-radius: 0 !important;
 }
