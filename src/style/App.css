@@ -20,16 +20,18 @@
 }
 
 html, body {
-  height: 100vh;
+  height: 100%;
+  overflow: auto;
 }
 
-.app {
+#root, .app {
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .page-header {
-  height: 15%;
+  position: relative;
   margin: 0;
 }
 
@@ -38,12 +40,17 @@ html, body {
 }
 
 .content {
-  height: 80%;
+  position: relative;
+  display: flex;
+  overflow: hidden;
 }
 
 .side-nav-container {
-  height: 100%;
-  overflow: scroll;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  display: block;
 }
 
 .course-code-search-bar-container {
@@ -61,8 +68,11 @@ html, body {
 }
 
 .detail-panel-container {
-  height: 100%;
-  overflow: scroll;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  display: block;
 }
 
 
