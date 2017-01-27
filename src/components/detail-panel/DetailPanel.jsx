@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from "lodash";
-import {Col, Tab, Nav, NavItem} from 'react-bootstrap';
+import {Nav, NavItem} from 'react-bootstrap';
 
 import CourseList from './CourseList';
 
@@ -17,7 +17,7 @@ class DetailPanel extends Component{
 
   render(){
     return(
-      <div className="detail-panel-container col-md-8 col-lg-9">
+      <div className="detail-panel-container col-xs-12 col-sm-12 col-md-8 col-lg-9">
         <div className="level-tabs-container">
           <Nav bsStyle="tabs"
                activeKey={this.state.activeCourseLevel}

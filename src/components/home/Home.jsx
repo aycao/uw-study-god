@@ -20,7 +20,7 @@ class Home extends Component{
       return (
           <div className="app">
             <Header/>
-            <div className="content">
+            <div className="content container-fluid">
               <SideNav/>
               <DetailPanel/>
             </div>
