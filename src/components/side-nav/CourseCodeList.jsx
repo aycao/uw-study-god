@@ -10,8 +10,7 @@ class CourseCodeList extends Component{
 
   constructor(props){
     super(props);
-    this.onCollapseChange = this.onCollapseChange.bind(this);
-    this.state = {activeKey: ''}
+    this.state = {expandedPanels: []};
   }
 
   render(){
@@ -25,16 +24,13 @@ class CourseCodeList extends Component{
     );
   }
 
-  onCollapseChange(newActiveKey){
-    this.setState({activeKey: newActiveKey});
-  }
-
   makeCourseCodePanels(courseCodes, activeCourseCode){
     const courseCodeGroupesByInitial = _.groupBy(courseCodes, 'igroup');
     return _.map(courseCodeGroupesByInitial, (groupedCourseCodes, initial) => {
       return (
-          <Panel header={<span><h4 className="panel-heading-clickable">{initial}</h4></span>}
+          <Panel header={<div><div className="panel-heading-clickable">{initial}</div></div>}
                  key={initial}
+                 eventKey={initial}
                  className="course-code-list-item"
                  collapsible>
             <CourseCodeGroup courseCodes={groupedCourseCodes} activeCourseCode={activeCourseCode}  />
@@ -42,7 +38,6 @@ class CourseCodeList extends Component{
       )
     });
   }
-
 }
 
 
