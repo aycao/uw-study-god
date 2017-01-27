@@ -1,4 +1,4 @@
-
+@import "_palette.css";
 
 .detail-panel-container {
     height: auto;
@@ -6,6 +6,10 @@
     overflow-y: auto;
     position: relative;
     display: block;
+}
+
+.level-tabs-container {
+    margin-bottom: 15px;
 }
 
 .course-list-container .panel {
@@ -16,10 +20,15 @@
     margin: 0;
     padding: 0;
     white-space: nowrap;
-    overflow: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .course-list-item .panel-heading-clickable {
     padding: 15px;
+}
+
+.course-list-item.not-offering .panel-heading-clickable {
+    color: var(--grey-level-2);
 }
 

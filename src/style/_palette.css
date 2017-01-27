@@ -1,0 +1,15 @@
+html {
+  --gold-level-1: #FFFFAA;
+  --gold-level-2: #FFEA3D;
+  --gold-level-3: #FFD54F;
+  --gold-level-4: #E4B429;
+  --gold-primary: var(--gold-level-3);
+
+  --grey-level-1: #DFDFDF;
+  --grey-level-2: #A2A2A2;
+  --grey-level-3: #787878;
+  --grey-level-4: #000000;
+  --grey-primary: var(--grey-level-4);
+
+  --white: #FFFFFF;
+}

@@ -18,7 +18,7 @@ class Home extends Component{
       return <div>loading data</div>
     }else{
       return (
-          <div className="app container-fluid">
+          <div className="app">
             <Header/>
             <div className="content">
               <SideNav/>

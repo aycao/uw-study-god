@@ -1,9 +1,44 @@
+@import "_palette.css";
+
 .page-header {
     position: relative;
     margin: 0;
-    height: 10%;
+    border-bottom: 0;
 }
 
 .page-header h2 {
     margin: 0;
+}
+
+.header-bar-container {
+    background-color: var(--grey-primary);
+}
+
+#logo {
+    margin: -6px;
+    width: 100%;
+}
+
+.colour-canvas-container {
+    height: 15px;
+}
+
+.colour-canvas-bar {
+    height: 100%;
+}
+
+#canvas-1 {
+    background-color: var(--gold-level-1);
+}
+
+#canvas-2 {
+    background-color: var(--gold-level-2);
+}
+
+#canvas-3 {
+    background-color: var(--gold-level-3);
+}
+
+#canvas-4 {
+    background-color: var(--gold-level-4);
 }

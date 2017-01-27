@@ -1,6 +1,7 @@
 @import "sideNav.css";
 @import "detailPanel.css";
 @import "header.css";
+@import "_palette.css";
 
 html, body {
   height: 100%;

@@ -17,7 +17,7 @@ class DetailPanel extends Component{
 
   render(){
     return(
-      <Col md={8} sm={12} className="detail-panel-container">
+      <div className="detail-panel-container col-md-8 col-lg-9">
         <div className="level-tabs-container">
           <Nav bsStyle="tabs"
                activeKey={this.state.activeCourseLevel}
@@ -26,10 +26,10 @@ class DetailPanel extends Component{
             {this.makeLevelNavItems()}
           </Nav>
         </div>
-        <div className="level-tab-content-container">
+        <div className="level-tabs-content-container">
           <CourseList courses={this.getActiveCourseList(this.state.activeCourseLevel)}/>
         </div>
-      </Col>
+      </div>
     );
   }
 
