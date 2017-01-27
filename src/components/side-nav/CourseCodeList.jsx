@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import {Panel} from 'react-bootstrap';
+import {Panel, Glyphicon} from 'react-bootstrap';
 
 import CourseCodeGroup from './CourseCodeGroup';
 
@@ -10,6 +10,7 @@ class CourseCodeList extends Component{
 
   constructor(props){
     super(props);
+    this.handleCourseCodePanelSelect = this.handleCourseCodePanelSelect.bind(this);
     this.state = {expandedPanels: []};
   }
 
@@ -27,17 +28,30 @@ class CourseCodeList extends Component{
   makeCourseCodePanels(courseCodes, activeCourseCode){
     const courseCodeGroupesByInitial = _.groupBy(courseCodes, 'igroup');
     return _.map(courseCodeGroupesByInitial, (groupedCourseCodes, initial) => {
+      const icon = <Glyphicon glyph={_.includes(this.state.expandedPanels, initial)? 'menu-down': 'menu-right'}/>;
       return (
-          <Panel header={<div><div className="panel-heading-clickable">{initial}</div></div>}
+          <Panel header={<div><div className="panel-heading-clickable">{icon} {initial}</div></div>}
                  key={initial}
                  eventKey={initial}
                  className="course-code-list-item"
-                 collapsible>
-            <CourseCodeGroup courseCodes={groupedCourseCodes} activeCourseCode={activeCourseCode}  />
+                 collapsible
+                 expanded={_.includes(this.state.expandedPanels, initial)}
+                 onSelect={this.handleCourseCodePanelSelect}>
+            <CourseCodeGroup courseCodes={groupedCourseCodes} activeCourseCode={activeCourseCode} />
           </Panel>
       )
     });
   }
+
+  handleCourseCodePanelSelect(key){
+    if(_.includes(this.state.expandedPanels, key)){
+      const expandedPanels = this.state.expandedPanels;
+      this.setState({expandedPanels: _.remove(expandedPanels, key)});
+    }else {
+      this.setState({expandedPanels: this.state.expandedPanels.concat(key)});
+    }
+  }
+
 }
 
 
