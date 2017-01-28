@@ -27,15 +27,19 @@ class CourseCodeGroup extends Component{
     return (
         _.map(courseCodes, (courseCode) => {
           const className = `course-code-list-group-item ${courseCode === activeCourseCode? 'active': ''}`;
+          const header = (
+              <span className="course-code-list-group-item-header">
+                <h5>{courseCode.subject}</h5>
+                <Badge className={`course-code-group-label ${courseCode.group}`}>{courseCode.group}</Badge>
+              </span>
+          );
           return (
               <ListGroupItem
                   className={className}
-                  header={<h5>{courseCode.subject}</h5>}
+                  header={header}
                   key={courseCode.subject}
                   onClick={() => {this.handleCourseCodeClick(courseCode)}}>
-                <span className="course-code-list-group-item-body">{courseCode.description}
-                  <Badge className={`course-code-group-label ${courseCode.group}`}>{courseCode.group}</Badge>
-                </span>
+                <span className="course-code-list-group-item-body">{courseCode.description}</span>
               </ListGroupItem>)
         })
     );

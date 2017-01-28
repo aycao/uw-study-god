@@ -75,47 +75,51 @@
   font-size: 12px;
 }
 
-.course-code-list-group-item-body .course-code-group-label {
+.course-code-list-group-item-header h4, h5{
+  display: inline;
+}
+
+.course-code-list-group-item-header .course-code-group-label {
   margin-left: 10px;
 }
 
-.course-code-list-group-item-body .course-code-group-label.ART {
+.course-code-list-group-item-header .course-code-group-label.ART {
   background-color: var(--orange-primary);
 }
 
-.course-code-list-group-item-body .course-code-group-label.AHS {
+.course-code-list-group-item-header .course-code-group-label.AHS {
   background-color: var(--teal-primary);
 }
 
-.course-code-list-group-item-body .course-code-group-label.ENG {
+.course-code-list-group-item-header .course-code-group-label.ENG {
   background-color: var(--purple-primary);
 }
 
-.course-code-list-group-item-body .course-code-group-label.ENV {
+.course-code-list-group-item-header .course-code-group-label.ENV {
   background-color: var(--green-primary);
 }
 
-.course-code-list-group-item-body .course-code-group-label.MAT {
+.course-code-list-group-item-header .course-code-group-label.MAT {
   background-color: var(--pink-primary);
 }
 
-.course-code-list-group-item-body .course-code-group-label.SCI {
+.course-code-list-group-item-header .course-code-group-label.SCI {
   background-color: var(--blue-primary);
 }
 
-.course-code-list-group-item-body .course-code-group-label.REN {
+.course-code-list-group-item-header .course-code-group-label.REN {
   background-color: var(--Renison-green);
 }
 
-.course-code-list-group-item-body .course-code-group-label.STP {
+.course-code-list-group-item-header .course-code-group-label.STP {
   background-color: var(--Renison-green);
 }
 
-.course-code-list-group-item-body .course-code-group-label.STJ {
+.course-code-list-group-item-header .course-code-group-label.STJ {
   background-color: var(--STJ-green);
 }
 
-.course-code-list-group-item-body .course-code-group-label.CGC {
+.course-code-list-group-item-header .course-code-group-label.CGC {
   background-color: var(--CGC-red);
 }
 
