@@ -9,23 +9,41 @@ html, body {
 }
 
 #root, .app {
-  margin: 0 auto;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
   position: relative;
   display: flex;
-  overflow: hidden;
-  height: 90%;
+  flex-grow: 1;
 }
 
+.glyphicon {
+  font-size: 10px;
+}
 
 /**************************/
 /* Override bootstrap css */
 /**************************/
 
-* {
+*:not(.course-code-group-label) {
   border-radius: 0 !important;
+}
+
+* {
+  transition: background .2s, background-color .2s, border .2s;
+}
+
+.list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
+  color: var(--grey-primary);
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+  z-index: 2;
+  color: var(--grey-primary);
+  background-color: var(--gold-primary);
+  border-color: var(--gold-primary);
 }

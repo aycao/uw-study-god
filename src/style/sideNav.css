@@ -1,19 +1,20 @@
 @import "_palette.css";
 
 .side-nav-container {
-    height: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: relative;
-    display: block;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  display: block;
+  /*box-shadow: 1px 1px 3px 0px var(--grey-level-2);*/
 }
 
 .course-code-search-bar-container {
-    height: 10%;
+  height: 10%;
 }
 
 .course-code-list-container {
-    height: 90%;
+  height: 90%;
 }
 
 .course-code-list-item:focus,
@@ -21,21 +22,109 @@
 .course-code-list-group-item:focus,
 .course-code-list-group-item.active
 {
-    outline: none;
+  outline: none;
 }
 
 .course-code-list-container .panel {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .course-code-list-item .panel-heading {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .course-code-list-item .panel-heading-clickable {
-    padding: 10px;
+  padding: 10px;
+  font-size: 15px;
 }
+
+.course-code-list-item .panel-heading-clickable:hover {
+  background-color: #F5F5F5;
+  border-bottom: 2px solid var(--grey-level-3);
+  border-right: 7px solid var(--grey-level-3);
+}
+
+.course-code-list-item a[aria-expanded="true"] .panel-heading-clickable, .panel-heading-clickable:hover, .panel-heading-clickable:active {
+  background-color: var(--grey-level-1);
+  border-bottom: 2px solid var(--grey-level-3);
+  border-right: 7px solid var(--grey-level-3);
+}
+
+.panel.course-code-list-item, .course-code-list-item .panel-heading{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.course-code-list-item .panel-body {
+  border-left: 1px dashed var(--grey-level-1);
+}
+
+.panel.course-code-list-item, .course-code-list-item {
+  border-bottom: 1px solid var(--grey-level-1);
+}
+
+.course-code-list-group-item {
+  border: none;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--grey-level-1);
+}
+
+.course-code-list-group-item-body {
+  font-size: 12px;
+}
+
+.course-code-list-group-item-body .course-code-group-label {
+  margin-left: 10px;
+}
+
+.course-code-list-group-item-body .course-code-group-label.ART {
+  background-color: var(--orange-primary);
+}
+
+.course-code-list-group-item-body .course-code-group-label.AHS {
+  background-color: var(--teal-primary);
+}
+
+.course-code-list-group-item-body .course-code-group-label.ENG {
+  background-color: var(--purple-primary);
+}
+
+.course-code-list-group-item-body .course-code-group-label.ENV {
+  background-color: var(--green-primary);
+}
+
+.course-code-list-group-item-body .course-code-group-label.MAT {
+  background-color: var(--pink-primary);
+}
+
+.course-code-list-group-item-body .course-code-group-label.SCI {
+  background-color: var(--blue-primary);
+}
+
+.course-code-list-group-item-body .course-code-group-label.REN {
+  background-color: var(--Renison-green);
+}
+
+.course-code-list-group-item-body .course-code-group-label.STP {
+  background-color: var(--Renison-green);
+}
+
+.course-code-list-group-item-body .course-code-group-label.STJ {
+  background-color: var(--STJ-green);
+}
+
+.course-code-list-group-item-body .course-code-group-label.CGC {
+  background-color: var(--CGC-red);
+}
+
+
+
+
+
+
+
 
 
 

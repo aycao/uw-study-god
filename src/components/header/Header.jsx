@@ -8,10 +8,10 @@ const Header = () => {
     <div className="page-header">
       <div className="header-bar-container">
         <div className="container">
-          <div className="logo-container col-xs-12 col-sm-3 col-md-3">
+          <div className="logo-container col-xs-12 col-sm-4 col-md-4">
             <img id="logo" src={uwLogo} alt="UW Logo"/>
           </div>
-          <div className="col-xs-12 col-sm-9 col-md-9">
+          <div className="col-xs-12 col-sm-8 col-md-8">
             <h2>UW Course God</h2>
           </div>
         </div>

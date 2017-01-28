@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 
-import {ListGroup, ListGroupItem, Label} from 'react-bootstrap';
+import {ListGroup, ListGroupItem, Badge} from 'react-bootstrap';
 
 import {setActiveCourseCodeAC, fetchSelectedCoursesAC} from '../../actions';
 
@@ -30,10 +30,12 @@ class CourseCodeGroup extends Component{
           return (
               <ListGroupItem
                   className={className}
-                  header={courseCode.subject}
+                  header={<h5>{courseCode.subject}</h5>}
                   key={courseCode.subject}
                   onClick={() => {this.handleCourseCodeClick(courseCode)}}>
-                <span>{courseCode.description} <Label>{courseCode.group}</Label></span>
+                <span className="course-code-list-group-item-body">{courseCode.description}
+                  <Badge className={`course-code-group-label ${courseCode.group}`}>{courseCode.group}</Badge>
+                </span>
               </ListGroupItem>)
         })
     );
