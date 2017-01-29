@@ -38,8 +38,8 @@ class CourseList extends Component{
       );
       const body = (
         <div>
-          {this.props.courses.activeCourses[course.courseName]?
-              this.makeCourseBody(this.props.courses.activeCourses[course.courseName]):
+          {this.props.courses.coursesWithDetails[course.courseName]?
+              this.makeCourseBody(this.props.courses.coursesWithDetails[course.courseName]):
               'loading course'
           }
         </div>
@@ -57,8 +57,8 @@ class CourseList extends Component{
   }
 
   handleCourseSelect(subject, cataNum){
-    if(this.props.courses.activeCourses[`${subject}-${cataNum}`]){
-      console.log(this.props.courses.activeCourses[`${subject}-${cataNum}`]);
+    if(this.props.courses.coursesWithDetails[`${subject}-${cataNum}`]){
+      console.log(this.props.courses.coursesWithDetails[`${subject}-${cataNum}`]);
       return;
     }
     if(this.props.terms.activeTerm){
