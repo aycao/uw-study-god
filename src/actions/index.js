@@ -5,7 +5,7 @@ import Constants from '../utils/Constants';
 // Courses
 
 export function fetchAllCoursesAC(){
-  const request = Utils.makeCourseApiPromise(Constants.API_COURSE_BASE_ROUTE);
+  const request = Utils.makeUWApiPromise(Constants.API_COURSE_BASE_ROUTE);
   return (dispatch) => {
     request.then((data) => {
       dispatch({
@@ -17,7 +17,7 @@ export function fetchAllCoursesAC(){
 }
 
 export function fetchSelectedCoursesAC(courseCodeSubject){
-  const request = Utils.makeCourseApiPromise(`${Constants.API_COURSE_BASE_ROUTE}/${courseCodeSubject}`);
+  const request = Utils.makeUWApiPromise(`${Constants.API_COURSE_BASE_ROUTE}/${courseCodeSubject}`);
   return (dispatch) => {
     request.then((data) => {
       dispatch({
@@ -29,8 +29,29 @@ export function fetchSelectedCoursesAC(courseCodeSubject){
   }
 }
 
+export function fetchCourseDetailAC(subject, cataNum, term){
+  const requestBasicInfo = Utils.makeUWApiPromise(`${Constants.API_COURSE_BASE_ROUTE}/${subject}/${cataNum}`);
+  const requestSchedule = Utils.makeUWApiPromise(`${Constants.API_TERM_BASE_ROUTE}/${term}/${subject}/${cataNum}/${Constants.API_CONSTANT_SCHEDULE}`)
+  return (dispatch) => {
+    requestBasicInfo.then((data) => {
+      dispatch({
+        type: Constants.FETCH_COURSE_BASIC_INFO,
+        payload: data,
+      });
+    });
+    requestSchedule.then((data) => {
+      dispatch({
+        type: Constants.FETCH_COURSE_SCHEDULE,
+        payload: data,
+        subject: subject,
+        cataNum: cataNum,
+      });
+    });
+  }
+}
+
 export function fetchAllCourseCodesAC(){
-  const request = Utils.makeCourseApiPromise(Constants.API_COURSE_CODE_BASE_ROUTE);
+  const request = Utils.makeUWApiPromise(Constants.API_COURSE_CODE_BASE_ROUTE);
   return (dispatch) => {
     request.then((data) => {
       dispatch({
@@ -42,7 +63,7 @@ export function fetchAllCourseCodesAC(){
 }
 
 export function fetchOfferingCoursesAC(termId){
-  const request = Utils.makeCourseApiPromise(`${Constants.API_TERM_BASE_ROUTE}/${termId}${Constants.API_COURSE_BASE_ROUTE}`);
+  const request = Utils.makeUWApiPromise(`${Constants.API_TERM_BASE_ROUTE}/${termId}${Constants.API_COURSE_BASE_ROUTE}`);
   return (dispatch) => {
     request.then((data) =>{
       dispatch({
@@ -64,7 +85,7 @@ export function setActiveCourseCodeAC(courseCode){
 // Terms
 
 export function fetchAllTermsAC(){
-  const request = Utils.makeCourseApiPromise(Constants.API_TERM_LIST_BASE_ROUTE);
+  const request = Utils.makeUWApiPromise(Constants.API_TERM_LIST_BASE_ROUTE);
   return (dispatch) => {
     request.then((data) => {
       dispatch({

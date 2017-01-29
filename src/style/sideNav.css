@@ -45,7 +45,9 @@
   border-right: 7px solid var(--grey-level-3);
 }
 
-.course-code-list-item a[aria-expanded="true"] .panel-heading-clickable, .panel-heading-clickable:hover, .panel-heading-clickable:active {
+.course-code-list-item a[aria-expanded="true"] .panel-heading-clickable,
+.course-code-list-item a[aria-expanded="true"] .panel-heading-clickable:hover,
+.course-code-list-item a[aria-expanded="true"] .panel-heading-clickable:active {
   background-color: var(--grey-level-1);
   border-bottom: 2px solid var(--grey-level-3);
   border-right: 7px solid var(--grey-level-3);
@@ -80,7 +82,7 @@
 }
 
 .course-code-list-group-item-header .course-code-group-label {
-  margin-left: 10px;
+  width: 50px;
 }
 
 .course-code-list-group-item-header .course-code-group-label.ART {

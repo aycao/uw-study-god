@@ -12,7 +12,6 @@ class DetailPanel extends Component{
     super(props);
     this.state = {activeCourseLevel: 'all'};
     this.handleSelectCourseLevel = this.handleSelectCourseLevel.bind(this);
-    this.getActiveCourseList = this.getActiveCourseList.bind(this);
   }
 
   render(){
@@ -27,7 +26,7 @@ class DetailPanel extends Component{
           </Nav>
         </div>
         <div className="level-tabs-content-container">
-          <CourseList courses={this.getActiveCourseList(this.state.activeCourseLevel)}/>
+          <CourseList courseLevel={this.state.activeCourseLevel}/>
         </div>
       </div>
     );
@@ -37,11 +36,6 @@ class DetailPanel extends Component{
     this.setState({
       activeCourseLevel: key,
     });
-  }
-
-  getActiveCourseList(level){
-    const selectedCourses = this.props.courses.selectedCourses;
-    return level === 'all'? selectedCourses: _.filter(selectedCourses, {level: level});
   }
 
   makeLevelNavItems() {

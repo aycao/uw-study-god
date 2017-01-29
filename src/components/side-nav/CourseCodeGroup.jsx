@@ -30,7 +30,7 @@ class CourseCodeGroup extends Component{
           const header = (
               <span className="course-code-list-group-item-header">
                 <h5>{courseCode.subject}</h5>
-                <Badge className={`course-code-group-label ${courseCode.group}`}>{courseCode.group}</Badge>
+                <Badge className={`course-code-group-label pull-right ${courseCode.group}`}>{courseCode.group}</Badge>
               </span>
           );
           return (
