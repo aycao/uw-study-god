@@ -67,13 +67,13 @@ const appointments = {
     { name: 'Nicole', startTime: '11:30', endTime: '14:00', group: '2' }
   ],
   thursday: [
-    { name: 'Felipe', startTime: '05:50', endTime: '11:20', group: '4'},
-    { name: 'Felipe', startTime: '07:20', endTime: '11:20', group: '5'},
+    { name: 'Felipe', startTime: '05:50', endTime: '06:20', group: '4'},
+    { name: 'Felipe', startTime: '07:20', endTime: '08:20', group: '5'},
     { name: 'Felipe', startTime: '09:40', endTime: '11:20', group: '6'},
   ],
   friday: [
     { name: 'Felipe', startTime: '11:10', endTime: '11:20', group: '7'},
-    { name: 'Felipe', startTime: '07:30', endTime: '11:20', group: '8'},
+    { name: 'Felipe', startTime: '12:30', endTime: '14:20', group: '8'},
   ]
 };
 
