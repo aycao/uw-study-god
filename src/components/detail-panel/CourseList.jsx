@@ -3,6 +3,7 @@ import _ from 'lodash';
 import {connect} from 'react-redux';
 import {Panel} from 'react-bootstrap';
 
+import CourseDetail from './CourseDetail';
 import {fetchCourseDetailAC} from '../../actions';
 
 
@@ -20,12 +21,12 @@ class CourseList extends Component{
     }
     return(
         <div className="course-list-container">
-          {this.makeCourseItems(this.getActiveCourseList(this.props.courseLevel))}
+          {this.makeCourseItems(this.getCoursesAtSelectedLevel(this.props.courseLevel))}
         </div>
     );
   }
 
-  getActiveCourseList(level){
+  getCoursesAtSelectedLevel(level){
     const selectedCourses = this.props.courses.selectedCourses;
     return level === 'all'? selectedCourses: _.filter(selectedCourses, {level: level});
   }
@@ -37,12 +38,8 @@ class CourseList extends Component{
           <span><h4 className="panel-heading-clickable">{course.subject} {course.catalog_number} {course.title}</h4></span>
       );
       const body = (
-        <div>
-          {this.props.courses.coursesWithDetails[course.courseName]?
-              this.makeCourseBody(this.props.courses.coursesWithDetails[course.courseName]):
-              'loading course'
-          }
-        </div>
+          this.props.courses.coursesWithDetails[course.courseName]?
+              this.makeCourseBody(this.props.courses.coursesWithDetails[course.courseName], course.offering):'loading course'
       );
       return(
         <Panel collapsible
@@ -67,18 +64,14 @@ class CourseList extends Component{
     }
   }
 
-  makeCourseBody(course){
+  makeCourseBody(course, offering){
     if(!course || !course.schedule){
-      return <div></div>;
+      return<div>loading course</div>
     }
     return(
-      <div>
-        <div>{course.subject}</div>
-        <div>{course.schedule.length}</div>
-      </div>
+      <CourseDetail course={course} offering={offering}/>
     )
   }
-
 }
 
 const mapStateToProps = (state) => {

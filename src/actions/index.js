@@ -24,7 +24,7 @@ export function fetchSelectedCoursesAC(courseCodeSubject){
         type: Constants.FETCH_SELECTED_COURSES,
         payload: data,
         courseCode: courseCodeSubject,
-      })
+      });
     })
   }
 }
@@ -78,6 +78,13 @@ export function setActiveCourseCodeAC(courseCode){
   return {
     type: Constants.SET_ACTIVE_COURSE_CODE,
     payload: courseCode,
+  }
+}
+
+export function clearCourseDetailsAC(){
+  return {
+    type: Constants.CLEAR_COURSE_DETAILS,
+    payload: null,
   }
 }
 

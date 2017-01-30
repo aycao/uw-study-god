@@ -1,4 +1,6 @@
 html {
+  --gold-level-light: #FFFFE8;
+  --gold-level-0: #FFFFCC;
   --gold-level-1: #FFFFAA;
   --gold-level-2: #FFEA3D;
   --gold-level-3: #FFD54F;
@@ -11,42 +13,55 @@ html {
   --grey-level-4: #000000;
   --grey-primary: var(--grey-level-4);
 
+  --orange-level-light: #FFF3E6;
+  --orange-level-0: #FFE6C8;
   --orange-level-1: #FFD5A5;
   --orange-level-2: #FBAF00;
   --orange-level-3: #E78100;
   --orange-level-4: #D93F00;
   --orange-primary: var(--orange-level-3);
 
+  --teal-level-light: #F1F6F7;
+  --teal-level-0: #C1E9F2;
   --teal-level-1: #97DFEF;
   --teal-level-2: #00BED0;
   --teal-level-3: #0098A5;
   --teal-level-4: #005963;
   --teal-primary: var(--teal-level-3);
 
+  --purple-level-light: #FEFDFF;
+  --purple-level-0: #ECDEF8;
   --purple-level-1: #D0B4E7;
   --purple-level-2: #BE33DA;
   --purple-level-3: #8100B4;
   --purple-level-4: #57058B;
   --purple-primary: var(--purple-level-3);
 
+  --green-level-light: #F3FDD2;
+  --green-level-0: #E6F9A9;
   --green-level-1: #DAF582;
   --green-level-2: #BED500;
   --green-level-3: #B4BE00;
   --green-level-4: #607000;
   --green-primary: var(--green-level-3);
 
+  --pink-level-0: #FFE4F8;
   --pink-level-1: #FFBEEF;
   --pink-level-2: #FF63AA;
   --pink-level-3: #DF2498;
   --pink-level-4: #C60078;
   --pink-primary: var(--pink-level-4);
 
+  --blue-level-light: #E7EDF4;
+  --blue-level-0: #C9DDF6;
   --blue-level-1: #B4D5FF;
   --blue-level-2: #63A0FF;
   --blue-level-3: #0073CE;
   --blue-level-4: #0033BE;
   --blue-primary: var(--blue-level-4);
 
+  --red-level-light: #FBF2F2;
+  --red-level-0: #FFE1E2;
   --red-level-1: #FFA5AA;
   --red-level-2: #E41740;
   --red-level-3: #B71233;

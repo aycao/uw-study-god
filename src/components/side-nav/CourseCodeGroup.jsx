@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import {ListGroup, ListGroupItem, Badge} from 'react-bootstrap';
 
-import {setActiveCourseCodeAC, fetchSelectedCoursesAC} from '../../actions';
+import {setActiveCourseCodeAC, fetchSelectedCoursesAC, clearCourseDetailsAC} from '../../actions';
 
 class CourseCodeGroup extends Component{
 
@@ -48,6 +48,7 @@ class CourseCodeGroup extends Component{
   handleCourseCodeClick(courseCode){
     this.props.setActiveCourseCode(courseCode);
     this.props.fetchSelectedCourses(courseCode.subject);
+    this.props.clearCourseDetails();
   }
 }
 
@@ -58,7 +59,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     fetchSelectedCourses: (courseCode) => {
       dispatch(fetchSelectedCoursesAC(courseCode));
-    }
+    },
+    clearCourseDetails: () => {
+      dispatch(clearCourseDetailsAC());
+    },
   }
 };
 
