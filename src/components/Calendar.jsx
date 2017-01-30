@@ -317,7 +317,7 @@ const AppointmentCell = (props) => {
     const borderPixels = (blockSpan + 1) + 'px';
     const cssHeight = 'calc(' + height + ' + ' + borderPixels + ')';
     const top = (100 * blockTopOffsetSpan) + '%';
-    const cssTop = 'calc(' + top + ')';
+    const cssTop = 'calc(' + top + ' - 1px)';
 
     appointmentComponent = (
         <Appointment group={appointment.group} style={{ top: cssTop, height: cssHeight }} appointment={appointment} />
