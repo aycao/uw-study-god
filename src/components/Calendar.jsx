@@ -4,6 +4,7 @@ Modified from: http://jsfiddle.net/rdiaz/4brnfhb0/
 
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classname';
+import _ from 'lodash';
 import '../style/calendar.css';
 
 const DAYS_OF_WEEK = [
@@ -83,16 +84,16 @@ class Calendar extends Component {
     let earliestStartHour = 11;
     let latestEndHour = 14;
 
-    for (let day in appointments) {
-      appointments[day].forEach(appointment => {
+    _.forEach(appointments, (appointmentsByDay, day) => {
+      _.forEach(appointmentsByDay, (appointment) => {
         const startTime = appointment.startTime;
         const endTime = appointment.endTime;
 
         const startSplit = startTime.split(':');
         const endSplit = endTime.split(':');
-        let startHour = parseInt(startSplit[0]);
-        let startMinutes = parseInt(startSplit[1]);
-        let endHour = parseInt(endSplit[0]);
+        let startHour = parseInt(startSplit[0], 10);
+        let startMinutes = parseInt(startSplit[1], 10);
+        let endHour = parseInt(endSplit[0], 10);
 
         let blockStartMinutes = startMinutes;
         let blockTopOffsetSpan = 0;
@@ -104,8 +105,6 @@ class Calendar extends Component {
           }
         }
         const blockStartTime = toTimeString(startHour, blockStartMinutes);
-
-        console.log(blockStartTime);
 
         earliestStartHour = Math.min(startHour, earliestStartHour);
         latestEndHour = Math.max(endHour, latestEndHour);
@@ -133,7 +132,7 @@ class Calendar extends Component {
         eventBlocks[blockStartTime] = eventBlocks[blockStartTime] || {};
         eventBlocks[blockStartTime][day] = Object.assign({}, appointment, {blockSpan}, {blockTopOffsetSpan});
       });
-    }
+    });
 
     for (let hour = earliestStartHour; hour <= latestEndHour; hour++) {
       for (let minutes = 0; minutes < 60; minutes += blockSize) {
@@ -149,9 +148,7 @@ class Calendar extends Component {
   render() {
     const rows = [];
 
-    for (let time in this.timeBlocks) {
-      const block = this.timeBlocks[time];
-
+    _.forEach(this.timeBlocks, (block, time) => {
       rows.push(
           <Row key={time}>
             <TimeCell className="calendar__cell--time-col">{time}</TimeCell>
@@ -164,9 +161,9 @@ class Calendar extends Component {
 
           </Row>
       );
-    }
+    });
 
-    const monday = startOfWeek(new Date);
+    const monday = startOfWeek(new Date());
 
     return (
         <div className="calendar">
@@ -198,7 +195,7 @@ class Calendar extends Component {
 
 class CurrentTimeIndicator extends Component {
   state = {
-    now: new Date
+    now: new Date(),
   };
 
   componentDidMount() {
@@ -217,7 +214,7 @@ class CurrentTimeIndicator extends Component {
 
   updateDate = () => {
     this.setState({
-      now: new Date
+      now: new Date(),
     });
   };
 
@@ -284,8 +281,6 @@ const Cell = (props) => (
 
 const HeaderCell = (props) => {
   const { day } = props;
-  const isToday = day &&
-      day.toDateString() === new Date().toDateString();
 
   return (
       <Cell
