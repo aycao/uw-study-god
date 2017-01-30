@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-import BigCalendar from 'react-big-calendar';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import moment from 'moment';
 import Calendar from '../Calendar';
 
 class CourseDetail extends Component{
