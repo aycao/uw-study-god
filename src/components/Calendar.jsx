@@ -81,8 +81,8 @@ class Calendar extends Component {
     const ratio = timeInterval / blockSize;
     const timeBlocks = {};
     const eventBlocks = {};
-    let earliestStartHour = 11;
-    let latestEndHour = 14;
+    let earliestStartHour = 12;
+    let latestEndHour = 12;
 
     _.forEach(appointments, (appointmentsByDay, day) => {
       _.forEach(appointmentsByDay, (appointment) => {
