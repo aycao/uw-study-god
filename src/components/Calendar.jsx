@@ -44,7 +44,7 @@ const addDays = (date, days) => {
 
 /* PropTypes */
 const appointmentPropType = PropTypes.shape({
-  name: PropTypes.string.isRequired,
+  name: PropTypes.isRequired,
   startTime: PropTypes.string.isRequired,
   endTime: PropTypes.string.isRequired,
   blockSpan: PropTypes.number
