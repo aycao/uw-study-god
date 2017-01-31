@@ -46,7 +46,6 @@ class CourseDetail extends Component{
     }
     let schedule = Utils.getEmptyWeek();
     const classesBySection = _.groupBy(course.schedule, 'associated_class');
-    console.log(classesBySection);
     _.forOwn(classesBySection, (classObjs, sectionNumber) => {
       _.forEach(classObjs, (classObj) => {
         // section is the class name, eg: LEC 001

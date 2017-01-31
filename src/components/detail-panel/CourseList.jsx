@@ -55,11 +55,9 @@ class CourseList extends Component{
 
   handleCourseSelect(subject, cataNum){
     if(this.props.courses.coursesWithDetails[`${subject}-${cataNum}`]){
-      console.log(this.props.courses.coursesWithDetails[`${subject}-${cataNum}`]);
       return;
     }
     if(this.props.terms.activeTerm){
-      console.log(subject, cataNum);
       this.props.fetchCourseDetail(subject, cataNum, this.props.terms.activeTerm);
     }
   }

@@ -71,7 +71,7 @@ class Calendar extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.appointments !== nextProps.appointments) {
-      this.normalizeTimeBlock(nextProps.appointments);
+      this.normalizeTimeBlocks(nextProps.appointments);
     }
   }
 
