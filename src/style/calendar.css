@@ -106,7 +106,8 @@ Modified from: http://jsfiddle.net/rdiaz/4brnfhb0/
   right: -1px;
   left: 0;
   z-index: 1;
-  min-height: 100%;
+  overflow: auto;
+  text-overflow: ellipsis;
 }
 
 .calendar__appointment.colour-group-2 {
@@ -128,6 +129,41 @@ Modified from: http://jsfiddle.net/rdiaz/4brnfhb0/
   color: var(--purple-level-2);
   border-color: var(--purple-level-0);
   border-left-color: var(--purple-level-1);
+}
+
+.calendar__appointment.colour-group-5 {
+  background: var(--pink-level-0);
+  color: var(--pink-level-3);
+  border-color: var(--pink-level-1);
+  border-left-color: var(--pink-level-2);
+}
+
+.calendar__appointment.colour-group-6 {
+  background: var(--red-level-light);
+  color: var(--red-level-2);
+  border-color: var(--red-level-0);
+  border-left-color: var(--red-level-1);
+}
+
+.calendar__appointment.colour-group-7 {
+  background: var(--blue-level-light);
+  color: var(--blue-level-2);
+  border-color: var(--blue-level-0);
+  border-left-color: var(--blue-level-1);
+}
+
+.calendar__appointment.colour-group-8 {
+  background: var(--green-level-light);
+  color: var(--green-level-2);
+  border-color: var(--green-level-0);
+  border-left-color: var(--green-level-1);
+}
+
+.calendar__appointment.colour-group-9 {
+  background: var(--gold-level-0);
+  color: var(--gold-level-3);
+  border-color: var(--gold-level-1);
+  border-left-color: var(--gold-level-2);
 }
 
 .calendar__appointment__name {
