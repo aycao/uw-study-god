@@ -9,7 +9,7 @@ const CourseCodeReducer = (state_courseCodes = INITIAL_STATE, action) => {
       const courseCodes = _.forEach(action.payload.data.data, (value) => {
         _.assign(value, {igroup: _.head(value.subject)});
       });
-      return {...state_courseCodes, all: courseCodes};
+      return {...state_courseCodes, all: courseCodes, filteredCourseCodes: courseCodes};
     }
     case Constants.SET_ACTIVE_COURSE_CODE: {
       return {...state_courseCodes, activeCourseCode: action.payload};

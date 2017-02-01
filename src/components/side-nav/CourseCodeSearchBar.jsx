@@ -13,6 +13,7 @@ class CourseCodeSearchBar extends Component{
 
   componentWillReceiveProps(nextProps){
     if(!this.fuse && !_.isEmpty(nextProps.courseCodes.all)){
+      console.log("component will receive props");
       const options = {
         keys: ["subject", "title"],
       };
@@ -31,7 +32,8 @@ class CourseCodeSearchBar extends Component{
   }
 
   handleSearchBarInput(evt){
-    this.props.setCourseFilter({subject: evt.target.value.toUpperCase()});
+    this.props.setFilteredCourseCodes(this.fuse.search(evt.target.value));
+    this.props.setCourseFilter({subject: evt.target.value});
   }
 }
 
