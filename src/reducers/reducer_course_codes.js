@@ -1,7 +1,7 @@
 import Constants from '../utils/Constants';
 import _ from 'lodash';
 
-const INITIAL_STATE = {all: [], activeCourseCode: '', filter: {}};
+const INITIAL_STATE = {all: [], activeCourseCode: '', filter: {},  filteredCourseCodes: []};
 
 const CourseCodeReducer = (state_courseCodes = INITIAL_STATE, action) => {
   switch (action.type){
@@ -19,6 +19,9 @@ const CourseCodeReducer = (state_courseCodes = INITIAL_STATE, action) => {
       filter = _.omitBy(filter, _.isNil);
       filter = _.omitBy(filter, _.isEmpty);
       return {...state_courseCodes, filter: filter}
+    }
+    case Constants.SET_FILTERED_COURSE_CODES: {
+      return {...state_courseCodes, filteredCourseCodes: action.payload}
     }
     default: {
       return state_courseCodes;

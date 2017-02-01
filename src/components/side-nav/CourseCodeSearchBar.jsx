@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Fuse from 'fuse'
+import _ from 'lodash';
+import Fuse from 'fuse.js'
 
 import {setCourseCodeFilterAC} from '../../actions';
 
@@ -10,11 +11,20 @@ class CourseCodeSearchBar extends Component{
     this.handleSearchBarInput = this.handleSearchBarInput.bind(this);
   }
 
+  componentWillReceiveProps(nextProps){
+    if(!this.fuse && !_.isEmpty(nextProps.courseCodes.all)){
+      const options = {
+        keys: ["subject", "title"],
+      };
+      this.fuse = new Fuse(nextProps.courseCodes.all, options);
+    }
+  }
+
   render(){
     return (
         <div className="course-code-search-bar-container">
           <input type="text"
-                 value={this.props.courseCodeFilter.subject || ''}
+                 value={this.props.courseCodes.filter.subject || ''}
                  onInput={this.handleSearchBarInput}/>
         </div>
     );
@@ -27,7 +37,7 @@ class CourseCodeSearchBar extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    courseCodeFilter: state.courseCodes.filter,
+    courseCodes: state.courseCodes,
   }
 };
 
@@ -35,7 +45,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setCourseFilter: (filter) => {
       dispatch(setCourseCodeFilterAC(filter))
-    }
+    },
+    setFilteredCourseCodes: (courseCodes) => {
+      dispatch(setCourseCodeFilterAC(courseCodes))
+    },
   }
 };
 
