@@ -81,6 +81,13 @@ export function setActiveCourseCodeAC(courseCode){
   }
 }
 
+export function setCourseCodeFilterAC(filter){
+  return {
+    type: Constants.SET_COURSE_CODE_FILTER,
+    payload: filter,
+  }
+}
+
 export function clearCourseDetailsAC(){
   return {
     type: Constants.CLEAR_COURSE_DETAILS,

@@ -20,9 +20,14 @@ class CourseCodeList extends Component{
     }
     return(
         <div className="course-code-list-container">
-          {this.makeCourseCodePanels(this.props.courseCodes.all, this.props.courseCodes.activeCourseCode)}
+          {this.makeCourseCodePanels(this.getFilteredCourseCodes(this.props.courseCodes.all, this.props.courseCodes.filter),
+              this.props.courseCodes.activeCourseCode)}
         </div>
     );
+  }
+
+  getFilteredCourseCodes(courseCodes, filter){
+    return _.filter(courseCodes, filter);
   }
 
   makeCourseCodePanels(courseCodes, activeCourseCode){

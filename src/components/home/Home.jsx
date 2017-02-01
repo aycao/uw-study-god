@@ -24,7 +24,7 @@ class Home extends Component{
               <SideNav/>
               <DetailPanel/>
             </div>
-            <a href="#" onClick={() => {console.log('terms: ', this.props.terms); console.log('courses: ', this.props.courses)}}>check state</a>
+            <a href="#" onClick={() => {console.log('terms: ', this.props.terms); console.log('courses: ', this.props.courses); console.log('courseCodes: ', this.props.courseCodes)}}>check state</a>
           </div>
       );
     }
@@ -49,6 +49,7 @@ const mapStateToProps = (state) => {
   return {
     terms: state.terms,
     courses: state.courses,
+    courseCodes: state.courseCodes,
   };
 };
 
