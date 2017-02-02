@@ -85,9 +85,9 @@ class Calendar extends Component {
     let latestEndHour = 12;
 
     _.forEach(appointments, (appointmentsByDay, day) => {
+      let processedAppointments = [];
       _.forEach(appointmentsByDay, (appointment) => {
-        const startTime = appointment.startTime;
-        const endTime = appointment.endTime;
+        const {startTime, endTime} = appointment;
 
         const startSplit = startTime.split(':');
         const endSplit = endTime.split(':');
@@ -129,8 +129,23 @@ class Calendar extends Component {
           }
         }
 
+        // calculate collision
+        const startTimeObj = new Date(startTime);
+        const endTimeObj = new Date(endTime);
+        appointment = {...appointment, startTimeObj, endTimeObj};
+        _.forEach(processedAppointments, (processedAppointment) => {
+          if((startTimeObj > processedAppointment.startTimeObj && startTimeObj < processedAppointment.endTimeObj) ||
+              (endTimeObj > processedAppointment.startTimeObj && endTimeObj < processedAppointment.endTimeObj) ||
+              (startTimeObj <= processedAppointment.startTimeObj && endTimeObj >= processedAppointment.endTimeObj)){
+            const collision = (processedAppointment.collision + 1) || 1;
+            const order = (processedAppointment.order + 1) || 1;
+            processedAppointment.collision = collision;
+            appointment.collision = collision;
+          }
+        });
+
         eventBlocks[blockStartTime] = eventBlocks[blockStartTime] || {};
-        eventBlocks[blockStartTime][day] = Object.assign({}, appointment, {blockSpan}, {blockTopOffsetSpan});
+        eventBlocks[blockStartTime][day] = {...appointment, blockSpan, blockTopOffsetSpan};
       });
     });
 

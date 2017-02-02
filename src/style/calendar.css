@@ -95,6 +95,7 @@ Modified from: http://jsfiddle.net/rdiaz/4brnfhb0/
 }
 
 .calendar__appointment {
+  opacity: 0.6;
   background: #e0f6d8;
   color: #0c881d;
   border: #bfecaf solid 1px;

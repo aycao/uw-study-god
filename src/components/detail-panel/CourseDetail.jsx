@@ -42,7 +42,7 @@ class CourseDetail extends Component{
 
   makeSchedule(course){
     if(!(course && course.schedule && this.props.offering)){
-      return ;
+      return;
     }
     let schedule = Utils.getEmptyWeek();
     const classesBySection = _.groupBy(course.schedule, 'associated_class');
@@ -72,14 +72,8 @@ class CourseDetail extends Component{
       }); // end loop for each classObj in classObjs
 
     }); // end loop for each classObjs in classesBySections
-
-    let scheduleInfo = null;
-    if(this.props.offering){
-      scheduleInfo = (
-          <Calendar appointments={schedule}/>
-      )
-    }
-    return scheduleInfo;
+    
+    return <Calendar appointments={schedule}/>;
   }
 }
 
