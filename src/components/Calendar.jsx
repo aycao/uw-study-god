@@ -84,7 +84,7 @@ class Calendar extends Component {
     let earliestStartHour = 12;
     let latestEndHour = 12;
 
-    _.forEach(appointments, (appointmentsByDay, day) => {
+    _.forOwn(appointments, (appointmentsByDay, day) => {
       let processedAppointments = [];
       _.forEach(appointmentsByDay, (appointment) => {
         const {startTime, endTime} = appointment;
@@ -130,19 +130,21 @@ class Calendar extends Component {
         }
 
         // calculate collision
-        const startTimeObj = new Date(startTime);
-        const endTimeObj = new Date(endTime);
+        const startTimeObj = Date.parse('2017/01/01 ' + startTime);
+        const endTimeObj = Date.parse('2017/01/01 ' + endTime);
         appointment = {...appointment, startTimeObj, endTimeObj};
         _.forEach(processedAppointments, (processedAppointment) => {
           if((startTimeObj > processedAppointment.startTimeObj && startTimeObj < processedAppointment.endTimeObj) ||
               (endTimeObj > processedAppointment.startTimeObj && endTimeObj < processedAppointment.endTimeObj) ||
               (startTimeObj <= processedAppointment.startTimeObj && endTimeObj >= processedAppointment.endTimeObj)){
+            // collide
             const collision = (processedAppointment.collision + 1) || 1;
-            const order = (processedAppointment.order + 1) || 1;
             processedAppointment.collision = collision;
             appointment.collision = collision;
+            //console.log('collide ' + day + ' ', appointment, processedAppointment);
           }
         });
+        processedAppointments.push(appointment);
 
         eventBlocks[blockStartTime] = eventBlocks[blockStartTime] || {};
         eventBlocks[blockStartTime][day] = {...appointment, blockSpan, blockTopOffsetSpan};
@@ -333,9 +335,12 @@ const AppointmentCell = (props) => {
     const cssHeight = 'calc(' + height + ' + ' + borderPixels + ')';
     const top = (100 * blockTopOffsetSpan) + '%';
     const cssTop = 'calc(' + top + ' - 1px)';
+    const cssOpacity = appointment.collision >= 1? 0.5: 1;
 
     appointmentComponent = (
-        <Appointment group={appointment.group} style={{ top: cssTop, height: cssHeight }} appointment={appointment} />
+        <Appointment group={appointment.group}
+                     style={{opacity: cssOpacity, top: cssTop, height: cssHeight }}
+                     appointment={appointment} />
     );
   }
 

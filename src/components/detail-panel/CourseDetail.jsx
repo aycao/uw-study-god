@@ -45,35 +45,42 @@ class CourseDetail extends Component{
       return;
     }
     let schedule = Utils.getEmptyWeek();
-    const classesBySection = _.groupBy(course.schedule, 'associated_class');
-    _.forOwn(classesBySection, (classObjs, sectionNumber) => {
-      _.forEach(classObjs, (classObj) => {
-        // section is the class name, eg: LEC 001
-        // classes are array of sessions
-        const {section, classes, enrollment_capacity, enrollment_total, term} = classObj;
-        const year = Utils.getYearFromTermId(term);
-        _.forEach(classes, (session) => {
-          const {date, location} = session;
-          const weekdays = Utils.parseUWWeekDays(date.weekdays);
-          const makeupLectureIndicator = section.includes('LEC') && date.start_date === date.end_date? '*': '';
-          _.forEach(weekdays, (weekday) => {
-            const scheduleItem = {
-              name: <div><p>{section + makeupLectureIndicator}</p> <p>{`${location.building} ${location.room}`}</p></div>,
-              startTime: date.start_time,
-              endTime: date.end_time,
-              group: sectionNumber.toString(),
-            };
-            if(!_.find(schedule[weekday], scheduleItem)){
-              schedule[weekday].push(scheduleItem)
-            }
-          });
-        }); // end loop for each session in classes
+    try{
+      const classesBySection = _.groupBy(course.schedule, 'associated_class');
+      _.forOwn(classesBySection, (classObjs, sectionNumber) => {
+        _.forEach(classObjs, (classObj) => {
+          // section is the class name, eg: LEC 001
+          // classes are array of sessions
+          const {section, classes, enrollment_capacity, enrollment_total, term} = classObj;
+          const year = Utils.getYearFromTermId(term);
+          _.forEach(classes, (session) => {
+            const {date, location} = session;
+            const weekdays = Utils.parseUWWeekDays(date.weekdays);
+            const makeupLectureIndicator = (date.start_date && date.end_date) &&
+            section.includes('LEC') && date.start_date === date.end_date? '*': '';
+            _.forEach(weekdays, (weekday) => {
+              const scheduleItem = {
+                name: <div><p>{section + makeupLectureIndicator}</p> <p>{`${location.building} ${location.room}`}</p></div>,
+                startTime: date.start_time,
+                endTime: date.end_time,
+                group: sectionNumber.toString(),
+              };
+              if(!_.find(schedule[weekday], scheduleItem)){
+                schedule[weekday].push(scheduleItem)
+              }
+            });
+          }); // end loop for each session in classes
 
-      }); // end loop for each classObj in classObjs
+        }); // end loop for each classObj in classObjs
 
-    }); // end loop for each classObjs in classesBySections
-    
-    return <Calendar appointments={schedule}/>;
+      }); // end loop for each classObjs in classesBySections
+
+      return <Calendar appointments={schedule}/>;
+    }catch (e){
+      console.log('No Available Schedule Exception: ', e);
+      return <div>No Available Schedule</div>;
+    }
+
   }
 }
 
