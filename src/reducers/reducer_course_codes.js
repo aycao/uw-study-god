@@ -1,10 +1,18 @@
 import Constants from '../utils/Constants';
 import _ from 'lodash';
 
-const INITIAL_STATE = {all: [], activeCourseCode: '', filter: {},  filteredCourseCodes: []};
+const INITIAL_STATE = {
+  all: [],
+  activeCourseCode: '',
+  filter: {},
+  filteredCourseCodes: [],
+  status: Constants.NOTFETCHED};
 
 const CourseCodeReducer = (state_courseCodes = INITIAL_STATE, action) => {
   switch (action.type){
+    case Constants.SET_COURSE_CODE_STATUS: {
+      return {...state_courseCodes, status: action.payload};
+    }
     case Constants.FETCH_ALL_COURSE_CODES: {
       const courseCodes = _.forEach(action.payload.data.data, (value) => {
         _.assign(value, {igroup: _.head(value.subject)});

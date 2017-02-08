@@ -33,7 +33,7 @@ class CourseCodeSearchBar extends Component{
       const options = {
         keys: ['subject', 'description'],
         shouldSort: false,
-        threshold: 0.3
+        threshold: 0.4
       };
       this.fuse = new Fuse(this.props.courseCodes.all,options);
     }

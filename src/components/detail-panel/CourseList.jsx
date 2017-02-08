@@ -3,6 +3,7 @@ import _ from 'lodash';
 import {connect} from 'react-redux';
 import {Panel} from 'react-bootstrap';
 
+import Constants from '../../utils/Constants';
 import CourseDetail from './CourseDetail';
 import {fetchCourseDetailAC} from '../../actions';
 
@@ -20,22 +21,25 @@ class CourseList extends Component{
     if(_.isEmpty(displayingCourses) &&
         _.isEmpty(this.props.courses.selectedCourses) &&
         _.isEmpty(this.props.courseCodes.activeCourseCode)){
+      const message = this.props.courses.status === Constants.FETCHING? 'Fetching': 'Select A Subject On Left';
       return (
-          <div>
-            Select A Subject On Left
+          <div className="course-list-container-message">
+            {message}
           </div>
       )
     }else if(_.isEmpty(displayingCourses) &&
         _.isEmpty(this.props.courses.selectedCourses)){
+      const message = this.props.courses.status === Constants.FETCHING? 'Fetching': 'No Courses Found for Selected Term';
       return (
-          <div>
-            No Courses Found for Selected Term
+          <div className="course-list-container-message">
+            {message}
           </div>
       )
     }else if(_.isEmpty(displayingCourses)){
+      const message = this.props.courses.status === Constants.FETCHING? 'Fetching': 'No Courses Found for This Level';
       return (
-          <div>
-            No Courses Found for This Level
+          <div className="course-list-container-message">
+            {message}
           </div>
       )
     }

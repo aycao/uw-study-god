@@ -19,7 +19,7 @@ export function fetchAllCoursesAC(){
       dispatch({
         type: Constants.SET_COURSE_STATUS,
         payload: Constants.FETCHED,
-      })
+      });
     }).catch((err) => {
       dispatch({
         type: Constants.SET_COURSE_STATUS,
@@ -45,7 +45,7 @@ export function fetchSelectedCoursesAC(courseCodeSubject){
       dispatch({
         type: Constants.SET_COURSE_STATUS,
         payload: Constants.FETCHED,
-      })
+      });
     }).catch((err) => {
       dispatch({
         type: Constants.SET_COURSE_STATUS,
@@ -79,24 +79,50 @@ export function fetchCourseDetailAC(subject, cataNum, term){
 export function fetchAllCourseCodesAC(){
   const request = Utils.makeUWApiPromise(Constants.API_COURSE_CODE_BASE_ROUTE);
   return (dispatch) => {
+    dispatch({
+      type: Constants.SET_COURSE_CODE_STATUS,
+      payload: Constants.FETCHING,
+    });
     request.then((data) => {
       dispatch({
         type: Constants.FETCH_ALL_COURSE_CODES,
         payload: data,
       });
-    });
+      dispatch({
+        type: Constants.SET_COURSE_CODE_STATUS,
+        payload: Constants.FETCHED,
+      });
+    }).catch((err) => {
+      dispatch({
+        type: Constants.SET_COURSE_CODE_STATUS,
+        payload: Constants.NOTFETCHED,
+      })
+    })
   }
 }
 
 export function fetchOfferingCoursesAC(termId){
   const request = Utils.makeUWApiPromise(`${Constants.API_TERM_BASE_ROUTE}/${termId}${Constants.API_COURSE_BASE_ROUTE}`);
   return (dispatch) => {
+    dispatch({
+      type: Constants.SET_COURSE_STATUS,
+      payload: Constants.FETCHING,
+    });
     request.then((data) =>{
       dispatch({
         type: Constants.FETCH_OFFERING_COURSES,
         payload: data,
       });
-    });
+      dispatch({
+        type: Constants.SET_COURSE_STATUS,
+        payload: Constants.FETCHED,
+      })
+    }).catch((err) => {
+      dispatch({
+        type: Constants.SET_COURSE_STATUS,
+        payload: Constants.NOTFETCHED,
+      })
+    })
   }
 }
 

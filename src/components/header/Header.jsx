@@ -12,7 +12,7 @@ const Header = () => {
             <img id="logo" src={uwLogo} alt="UW Logo"/>
           </div>
           <div className="col-xs-12 col-sm-8 col-md-8">
-            <h2>UW Course God</h2>
+            <h2></h2>
           </div>
         </div>
       </div>

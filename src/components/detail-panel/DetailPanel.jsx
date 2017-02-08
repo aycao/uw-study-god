@@ -15,6 +15,7 @@ class DetailPanel extends Component{
   }
 
   render(){
+
     return(
       <div className="detail-panel-container col-xs-12 col-sm-12 col-md-8 col-lg-9">
         <div className="level-tabs-container">
@@ -55,6 +56,7 @@ class DetailPanel extends Component{
 const mapStateToProps = (state) => {
   return {
     courses: state.courses,
+    courseCodes: state.courseCodes,
   }
 };
 
