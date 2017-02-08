@@ -76,7 +76,12 @@ class CourseDetail extends Component{
 
       }); // end loop for each classObjs in classesBySections
 
-      return <Calendar appointments={schedule}/>;
+      return (
+          <div>
+            <div style={{fontSize: 'small'}}>* Makeup lecture<br/>✝ Time slot coincide</div>
+            <Calendar appointments={schedule}/>
+          </div>
+      );
     }catch (e){
       console.log('No Available Schedule Exception: ', e);
       return <div>No Available Schedule</div>;

@@ -33,7 +33,7 @@ const Utils = {
   },
   getYearFromTermId: (termId) => {
     const term = termId.toString();
-    if (term.length != 4) return 0;
+    if (term.length !== 4) return 0;
     return parseInt(`20${term.slice(1,3)}`, 10);
   },
 

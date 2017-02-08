@@ -86,7 +86,6 @@ class Calendar extends Component {
 
     _.forOwn(appointments, (appointmentsByDay, day) => {
       let processedAppointments = [];
-      console.log(day, appointmentsByDay);
       _.forEach(appointmentsByDay, (appointment) => {
         const {startTime, endTime} = appointment;
 
@@ -142,15 +141,14 @@ class Calendar extends Component {
             const collision = (processedAppointment.collision + 1) || 1;
             processedAppointment.collision = collision;
             appointment.collision = collision;
-            console.log('collide ' + day + ' ', appointment, processedAppointment);
           }
         });
         processedAppointments.push(appointment);
 
         eventBlocks[blockStartTime] = eventBlocks[blockStartTime] || {};
         if(eventBlocks[blockStartTime][day]){
-          if(eventBlocks[blockStartTime][day].startTimeObj == appointment.startTimeObj &&
-              eventBlocks[blockStartTime][day].endTimeObj == appointment.endTimeObj){
+          if(eventBlocks[blockStartTime][day].startTimeObj === appointment.startTimeObj &&
+              eventBlocks[blockStartTime][day].endTimeObj === appointment.endTimeObj){
             appointment.coincide = true;
           }
         }
