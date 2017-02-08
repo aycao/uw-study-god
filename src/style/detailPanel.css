@@ -18,7 +18,7 @@
     line-height:10;
     position: relative;
     font-size: xx-large;
-    color: var(--grey-level-2);
+    color: var(--grey-level-1);
 }
 
 .course-list-container .panel {
