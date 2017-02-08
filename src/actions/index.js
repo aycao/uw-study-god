@@ -1,5 +1,6 @@
 import Utils from '../utils/Utils';
 import Constants from '../utils/Constants';
+import axios from 'axios';
 
 
 // Courses
@@ -59,19 +60,32 @@ export function fetchCourseDetailAC(subject, cataNum, term){
   const requestBasicInfo = Utils.makeUWApiPromise(`${Constants.API_COURSE_BASE_ROUTE}/${subject}/${cataNum}`);
   const requestSchedule = Utils.makeUWApiPromise(`${Constants.API_TERM_BASE_ROUTE}/${term}/${subject}/${cataNum}/${Constants.API_CONSTANT_SCHEDULE}`)
   return (dispatch) => {
-    requestBasicInfo.then((data) => {
-      dispatch({
-        type: Constants.FETCH_COURSE_BASIC_INFO,
-        payload: data,
+    dispatch({
+      type: Constants.SET_COURSE_STATUS,
+      payload: Constants.FETCHING,
+    })
+    axios.all([requestBasicInfo, requestSchedule]).then(
+      axios.spread((basicInfo, scheduleInfo) => {
+        dispatch({
+          type: Constants.FETCH_COURSE_BASIC_INFO,
+          payload: basicInfo,
+        });
+        dispatch({
+          type: Constants.FETCH_COURSE_SCHEDULE,
+          payload: scheduleInfo,
+          subject: subject,
+          cataNum: cataNum,
+        });
+        dispatch({
+          type: Constants.SET_COURSE_STATUS,
+          payload: Constants.FETCHED,
+        });
       });
-    });
-    requestSchedule.then((data) => {
+    ).catch((err) => {
       dispatch({
-        type: Constants.FETCH_COURSE_SCHEDULE,
-        payload: data,
-        subject: subject,
-        cataNum: cataNum,
-      });
+        type: Constants.SET_COURSE_STATUS,
+        payload: Constants.NOTFETCHED,
+      })
     });
   }
 }
@@ -160,12 +174,25 @@ export function clearCourseDetailsAC(){
 export function fetchAllTermsAC(){
   const request = Utils.makeUWApiPromise(Constants.API_TERM_LIST_BASE_ROUTE);
   return (dispatch) => {
+    dispatch({
+      type: Constants.SET_TERM_STATUS,
+      payload: Constants.FETCHING,
+    })
     request.then((data) => {
       dispatch({
         type: Constants.FETCH_ALL_TERMS,
         payload: data,
       });
       dispatch(setActiveTermAC(data.data.data.current_term));
+      dispatch({
+        type: Constants.SET_TERM_STATUS,
+        payload: Constants.FETCHED,
+      })
+    }).catch((err) => {
+      dispatch({
+        type: Constants.SET_TERM_STATUS,
+        payload: Constants.NOTFETCHED,
+      })
     });
   }
 }

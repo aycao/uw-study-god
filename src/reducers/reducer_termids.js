@@ -1,11 +1,19 @@
 import Constants from '../utils/Constants';
 import _ from 'lodash';
 
-const INITIAL_STATE = {all: [], currentTerm: null, activeTerm: null};
+const INITIAL_STATE = {
+  all: [],
+  currentTerm: null,
+  activeTerm: null,
+  status: Constants.NOTFETCHED,
+};
 
 const TermReducer = (state_terms = INITIAL_STATE, action) => {
   switch (action.type){
-    case Constants.FETCH_ALL_TERMS:
+    case Constants.SET_TERM_STATUS:{
+      return {...state_terms, status: action.payload}
+    }
+    case Constants.FETCH_ALL_TERMS:{
       const years = action.payload.data.data.listings;
       let allTerms = [];
       _.forOwn(years, (yearObj, yearNum) => {
@@ -14,9 +22,11 @@ const TermReducer = (state_terms = INITIAL_STATE, action) => {
         });
       });
       return {...state_terms, all: allTerms, currentTerm: action.payload.data.data.current_term};
-    case Constants.SET_ACTIVE_TERM:
+    }
+    case Constants.SET_ACTIVE_TERM:{
       console.log('active term: ', action.payload);
       return {...state_terms, activeTerm: action.payload};
+    }
     default:
       return state_terms;
   }
