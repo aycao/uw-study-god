@@ -28,7 +28,6 @@ const CourseReducer = (state_courses = INITIAL_STATE, action) => {
         offeringCatalogNumbers = _.map(_.filter(state_courses.offeringCourses, {subject: action.courseCode}), 'catalog_number');
       }
       const courses = _.forEach(action.payload.data.data, (course) => {
-
         _.assign(course, {
           level: `${_.head(course.catalog_number)}00`,
           offering: _.includes(offeringCatalogNumbers, course.catalog_number),
@@ -40,21 +39,21 @@ const CourseReducer = (state_courses = INITIAL_STATE, action) => {
     case Constants.FETCH_COURSE_BASIC_INFO: {
       const course = action.payload.data.data;
       const courseName = `${course.subject}-${course.catalog_number}`;
-      let activeCourses = state_courses.courseDetails;
-      activeCourses[courseName] = course;
-      return {...state_courses, courseDetails: activeCourses};
+      let courseDetails = state_courses.courseDetails;
+      courseDetails[courseName] = course;
+      return {...state_courses, courseDetails};
     }
     case Constants.FETCH_COURSE_SCHEDULE: {
       const schedule = action.payload.data.data;
       const courseName = `${action.subject}-${action.cataNum}`;
-      let activeCourses = state_courses.courseDetails;
-      if (state_courses.courseDetails[courseName]) {
-        activeCourses[courseName].schedule = schedule;
+      let courseDetails = state_courses.courseDetails;
+      if (courseDetails[courseName]) {
+        courseDetails[courseName].schedule = schedule;
       } else {
-        activeCourses[courseName] = {};
-        activeCourses[courseName].schedule = schedule;
+        courseDetails[courseName] = {};
+        courseDetails[courseName].schedule = schedule;
       }
-      return {...state_courses, courseDetails: activeCourses};
+      return {...state_courses, courseDetails};
     }
     case Constants.CLEAR_COURSE_DETAILS: {
       return {...state_courses, courseDetails: {}}
