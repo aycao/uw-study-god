@@ -86,6 +86,7 @@ class Calendar extends Component {
 
     _.forOwn(appointments, (appointmentsByDay, day) => {
       let processedAppointments = [];
+      console.log(day, appointmentsByDay);
       _.forEach(appointmentsByDay, (appointment) => {
         const {startTime, endTime} = appointment;
 
@@ -141,12 +142,18 @@ class Calendar extends Component {
             const collision = (processedAppointment.collision + 1) || 1;
             processedAppointment.collision = collision;
             appointment.collision = collision;
-            //console.log('collide ' + day + ' ', appointment, processedAppointment);
+            console.log('collide ' + day + ' ', appointment, processedAppointment);
           }
         });
         processedAppointments.push(appointment);
 
         eventBlocks[blockStartTime] = eventBlocks[blockStartTime] || {};
+        if(eventBlocks[blockStartTime][day]){
+          if(eventBlocks[blockStartTime][day].startTimeObj == appointment.startTimeObj &&
+              eventBlocks[blockStartTime][day].endTimeObj == appointment.endTimeObj){
+            appointment.coincide = true;
+          }
+        }
         eventBlocks[blockStartTime][day] = {...appointment, blockSpan, blockTopOffsetSpan};
       });
     });
@@ -274,7 +281,7 @@ const Appointment = (props) => {
           {time}
         </div>
         <div className="calendar__appointment__name">
-          {appointment.name}
+          <div>{appointment.name}{appointment.coincide? ' ✝': ''}<br/>{appointment.location}</div>
         </div>
       </div>
   );
@@ -335,7 +342,7 @@ const AppointmentCell = (props) => {
     const cssHeight = 'calc(' + height + ' + ' + borderPixels + ')';
     const top = (100 * blockTopOffsetSpan) + '%';
     const cssTop = 'calc(' + top + ' - 1px)';
-    const cssOpacity = appointment.collision >= 1? 0.5: 1;
+    const cssOpacity = appointment.collision >= 1 && !appointment.coincide? 0.6: 1;
 
     appointmentComponent = (
         <Appointment group={appointment.group}
@@ -358,34 +365,3 @@ AppointmentCell.propTypes = {
 };
 
 export default Calendar;
-
-//
-// const App = (props) => (
-//     <div className="container">
-//       <Calendar {...props} />
-//     </div>
-// );
-//
-// /* INIT */
-// const renderCalendar = (appointments) => {
-//   ReactDOM.render(
-//       <App appointments={appointments} />,
-//       document.getElementById('root')
-//   );
-// };
-//
-// renderCalendar({
-//   monday: [
-//     { name: 'Gustavo', startTime: '08:00', endTime: '09:00' },
-//     { name: 'Felipe', startTime: '09:30', endTime: '11:00' },
-//     { name: 'Cony', startTime: '18:00', endTime: '18:30' }
-//   ],
-//   tuesday: [],
-//   wednesday: [
-//     { name: 'Nicole', startTime: '11:30', endTime: '14:00' }
-//   ],
-//   thursday: [
-//     { name: 'Alejandro', startTime: '00:00', endTime: '00:00' }
-//   ],
-//   friday: []
-// });

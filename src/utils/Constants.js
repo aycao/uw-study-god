@@ -1,5 +1,12 @@
 const Constants = {
 
+  // CONSTANTS
+
+  FETCHING: 'FETCHING',
+  FETCHED: 'FETCHED',
+  NOTFETCHED: 'NOTFETCHED',
+
+
   // API
 
   API_KEY: '5e007b8dee8dad9d815b1c73030b3bb0', // Please do NOT abuse my api key.
@@ -12,6 +19,8 @@ const Constants = {
   API_CONSTANT_SCHEDULE: 'schedule',
 
   // ACTION TYPES
+
+  SET_COURSE_STATUS: 'SET_COURSE_STATUS',
 
   FETCH_ALL_COURSES: 'FETCH_ALL_COURSES',
   FETCH_SELECTED_COURSES: 'FETCH_SELECTED_COURSES',

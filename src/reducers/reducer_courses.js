@@ -7,11 +7,15 @@ const INITIAL_STATE = {
   all: [],
   selectedCourses: [],
   offeringCourses: [],
-  coursesWithDetails: {},
+  courseDetails: {},
+  status: Constants.NOTFETCHED,
 };
 
 const CourseReducer = (state_courses = INITIAL_STATE, action) => {
   switch (action.type){
+    case Constants.SET_COURSE_STATUS: {
+      return {...state_courses, status: action.payload}
+    }
     case Constants.FETCH_ALL_COURSES: {
       return {...state_courses, all: action.payload.data.data};
     }
@@ -36,24 +40,24 @@ const CourseReducer = (state_courses = INITIAL_STATE, action) => {
     case Constants.FETCH_COURSE_BASIC_INFO: {
       const course = action.payload.data.data;
       const courseName = `${course.subject}-${course.catalog_number}`;
-      let activeCourses = state_courses.coursesWithDetails;
+      let activeCourses = state_courses.courseDetails;
       activeCourses[courseName] = course;
-      return {...state_courses, coursesWithDetails: activeCourses};
+      return {...state_courses, courseDetails: activeCourses};
     }
     case Constants.FETCH_COURSE_SCHEDULE: {
       const schedule = action.payload.data.data;
       const courseName = `${action.subject}-${action.cataNum}`;
-      let activeCourses = state_courses.coursesWithDetails;
-      if (state_courses.coursesWithDetails[courseName]) {
+      let activeCourses = state_courses.courseDetails;
+      if (state_courses.courseDetails[courseName]) {
         activeCourses[courseName].schedule = schedule;
       } else {
         activeCourses[courseName] = {};
         activeCourses[courseName].schedule = schedule;
       }
-      return {...state_courses, coursesWithDetails: activeCourses};
+      return {...state_courses, courseDetails: activeCourses};
     }
     case Constants.CLEAR_COURSE_DETAILS: {
-      return {...state_courses, coursesWithDetails: {}}
+      return {...state_courses, courseDetails: {}}
     }
     default:
       return state_courses;

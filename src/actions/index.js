@@ -7,10 +7,23 @@ import Constants from '../utils/Constants';
 export function fetchAllCoursesAC(){
   const request = Utils.makeUWApiPromise(Constants.API_COURSE_BASE_ROUTE);
   return (dispatch) => {
+    dispatch({
+      type: Constants.SET_COURSE_STATUS,
+      payload: Constants.FETCHING,
+    });
     request.then((data) => {
       dispatch({
         type: Constants.FETCH_ALL_COURSES,
         payload: data,
+      });
+      dispatch({
+        type: Constants.SET_COURSE_STATUS,
+        payload: Constants.FETCHED,
+      })
+    }).catch((err) => {
+      dispatch({
+        type: Constants.SET_COURSE_STATUS,
+        payload: Constants.NOTFETCHED,
       })
     })
   }
@@ -19,13 +32,26 @@ export function fetchAllCoursesAC(){
 export function fetchSelectedCoursesAC(courseCodeSubject){
   const request = Utils.makeUWApiPromise(`${Constants.API_COURSE_BASE_ROUTE}/${courseCodeSubject}`);
   return (dispatch) => {
+    dispatch({
+      type: Constants.SET_COURSE_STATUS,
+      payload: Constants.FETCHING,
+    });
     request.then((data) => {
       dispatch({
         type: Constants.FETCH_SELECTED_COURSES,
         payload: data,
         courseCode: courseCodeSubject,
       });
-    })
+      dispatch({
+        type: Constants.SET_COURSE_STATUS,
+        payload: Constants.FETCHED,
+      })
+    }).catch((err) => {
+      dispatch({
+        type: Constants.SET_COURSE_STATUS,
+        payload: Constants.NOTFETCHED,
+      })
+    });
   }
 }
 

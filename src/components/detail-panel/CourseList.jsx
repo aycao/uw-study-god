@@ -16,30 +16,49 @@ class CourseList extends Component{
   }
 
   render(){
-    if(_.isEmpty(this.props.courses)){
-      return <div>No courses found in selected term, or at this level</div>
+    const displayingCourses = this.getCoursesAtSelectedLevel(this.props.courses.selectedCourses, this.props.courseLevel);
+    if(_.isEmpty(displayingCourses) &&
+        _.isEmpty(this.props.courses.selectedCourses) &&
+        _.isEmpty(this.props.courseCodes.activeCourseCode)){
+      return (
+          <div>
+            Select A Subject On Left
+          </div>
+      )
+    }else if(_.isEmpty(displayingCourses) &&
+        _.isEmpty(this.props.courses.selectedCourses)){
+      return (
+          <div>
+            No Courses Found for Selected Term
+          </div>
+      )
+    }else if(_.isEmpty(displayingCourses)){
+      return (
+          <div>
+            No Courses Found for This Level
+          </div>
+      )
     }
     return(
         <div className="course-list-container">
-          {this.makeCourseItems(this.getCoursesAtSelectedLevel(this.props.courseLevel))}
+          {this.makeCourseItems(displayingCourses, this.props.courses.courseDetails)}
         </div>
     );
   }
 
-  getCoursesAtSelectedLevel(level){
-    const selectedCourses = this.props.courses.selectedCourses;
-    return level === 'all'? selectedCourses: _.filter(selectedCourses, {level: level});
+  getCoursesAtSelectedLevel(courses, level){
+    return level === 'all'? courses: _.filter(courses, {level: level});
   }
 
-  makeCourseItems(courses){
+  makeCourseItems(courses, courseDetails){
     return courses.map((course) => {
       const className = `course-list-item ${course.offering? 'offering': 'not-offering'}`;
       const header = (
           <span><h4 className="panel-heading-clickable">{course.subject} {course.catalog_number} {course.title}</h4></span>
       );
       const body = (
-          this.props.courses.coursesWithDetails[course.courseName]?
-              this.makeCourseBody(this.props.courses.coursesWithDetails[course.courseName], course.offering):'loading course'
+          courseDetails[course.courseName]?
+              this.makeCourseBody(courseDetails[course.courseName], course.offering):'loading course'
       );
       return(
         <Panel collapsible
@@ -54,7 +73,7 @@ class CourseList extends Component{
   }
 
   handleCourseSelect(subject, cataNum){
-    if(this.props.courses.coursesWithDetails[`${subject}-${cataNum}`]){
+    if(this.props.courses.courseDetails[`${subject}-${cataNum}`]){
       return;
     }
     if(this.props.terms.activeTerm){
@@ -76,6 +95,7 @@ const mapStateToProps = (state) => {
   return {
     terms: state.terms,
     courses: state.courses,
+    courseCodes: state.courseCodes,
   }
 };
 

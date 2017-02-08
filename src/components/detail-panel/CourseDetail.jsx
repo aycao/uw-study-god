@@ -57,10 +57,11 @@ class CourseDetail extends Component{
             const {date, location} = session;
             const weekdays = Utils.parseUWWeekDays(date.weekdays);
             const makeupLectureIndicator = (date.start_date && date.end_date) &&
-            section.includes('LEC') && date.start_date === date.end_date? '*': '';
+                section.includes('LEC') && date.start_date === date.end_date? ' *': '';
             _.forEach(weekdays, (weekday) => {
               const scheduleItem = {
-                name: <div><p>{section + makeupLectureIndicator}</p> <p>{`${location.building} ${location.room}`}</p></div>,
+                name: section + makeupLectureIndicator,
+                location: location.building + location.room,
                 startTime: date.start_time,
                 endTime: date.end_time,
                 group: sectionNumber.toString(),
@@ -80,8 +81,8 @@ class CourseDetail extends Component{
       console.log('No Available Schedule Exception: ', e);
       return <div>No Available Schedule</div>;
     }
-
   }
+
 }
 
 export default CourseDetail;
