@@ -61,7 +61,7 @@ class CourseDetail extends Component{
             _.forEach(weekdays, (weekday) => {
               const scheduleItem = {
                 name: section + makeupLectureIndicator,
-                location: location.building + location.room,
+                location: location.building + ' ' + location.room,
                 startTime: date.start_time,
                 endTime: date.end_time,
                 group: sectionNumber.toString(),
