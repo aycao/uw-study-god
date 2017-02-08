@@ -80,7 +80,7 @@ export function fetchCourseDetailAC(subject, cataNum, term){
           type: Constants.SET_COURSE_STATUS,
           payload: Constants.FETCHED,
         });
-      });
+      })
     ).catch((err) => {
       dispatch({
         type: Constants.SET_COURSE_STATUS,

@@ -14,7 +14,7 @@ class Home extends Component{
   }
 
   render(){
-    if(this.props.terms.all.length <= 0){
+    if(this.props.state.terms.all.length <= 0){
       return <div>loading data</div>
     }else{
       return (
@@ -49,9 +49,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    terms: state.terms,
-    courses: state.courses,
-    courseCodes: state.courseCodes,
+    state
   };
 };
 
